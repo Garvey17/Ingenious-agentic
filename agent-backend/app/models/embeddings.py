@@ -39,9 +39,9 @@ class GeminiEmbedding(BaseEmbedding):
     
     def __init__(self):
         """Initialize Gemini embedding client."""
-        genai.configure(api_key=settings.google_api_key)
-        self.model_name = settings.embedding_model
-        self._dimension = settings.embedding_dimension
+        genai.configure(api_key=settings.google_api_key or "")
+        self.model_name = settings.gemini_embedding_model
+        self._dimension = settings.qdrant_vector_size
         
         logger.info(f"Initialized Gemini Embedding with model: {self.model_name}")
     
@@ -105,9 +105,9 @@ class OpenAIEmbedding(BaseEmbedding):
     
     def __init__(self):
         """Initialize OpenAI embedding client."""
-        self.client = AsyncOpenAI(api_key=settings.openai_api_key)
-        self.model_name = settings.embedding_model
-        self._dimension = settings.embedding_dimension
+        self.client = AsyncOpenAI(api_key=settings.openai_api_key or "")
+        self.model_name = settings.openai_embedding_model
+        self._dimension = settings.qdrant_vector_size
         
         logger.info(f"Initialized OpenAI Embedding with model: {self.model_name}")
     
@@ -170,13 +170,22 @@ def get_embedding_model() -> BaseEmbedding:
     Returns:
         Embedding model instance based on settings
     """
-    if settings.llm_provider == "gemini":
+    provider = settings.embedding_provider
+    if provider == "gemini":
         return GeminiEmbedding()
-    elif settings.llm_provider == "openai":
+    elif provider == "openai":
         return OpenAIEmbedding()
     else:
-        raise ValueError(f"Unsupported embedding provider: {settings.llm_provider}")
+        raise ValueError(f"Unsupported embedding provider: {provider}")
 
 
-# Global embedding model instance
-embedding_model = get_embedding_model()
+# Global embedding model instance — lazy to avoid import-time API errors
+_embedding_model: BaseEmbedding | None = None
+
+
+def embedding_model() -> BaseEmbedding:
+    """Return (or lazily create) the global embedding model."""
+    global _embedding_model
+    if _embedding_model is None:
+        _embedding_model = get_embedding_model()
+    return _embedding_model

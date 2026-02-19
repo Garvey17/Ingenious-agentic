@@ -8,7 +8,7 @@ from abc import ABC, abstractmethod
 import json
 from pydantic import BaseModel, ValidationError
 
-from app.models import llm
+from app.models.llm import get_llm
 from app.config import get_logger_with_context
 
 T = TypeVar("T", bound=BaseModel)
@@ -35,7 +35,7 @@ class BaseAgent(ABC):
         self.agent_name = agent_name
         self.system_prompt = system_prompt
         self.logger = get_logger_with_context(__name__, agent_name=agent_name)
-        self.llm = llm
+        self.llm = get_llm()
         
         self.logger.info(f"Initialized {agent_name} agent")
     

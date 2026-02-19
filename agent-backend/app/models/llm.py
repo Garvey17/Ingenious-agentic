@@ -46,10 +46,10 @@ class GeminiLLM(BaseLLM):
     
     def __init__(self):
         """Initialize Gemini client."""
-        genai.configure(api_key=settings.google_api_key)
-        self.model_name = settings.llm_model
-        self.default_temperature = settings.llm_temperature
-        self.default_max_tokens = settings.llm_max_tokens
+        genai.configure(api_key=settings.google_api_key or "")
+        self.model_name = settings.llm_model or settings.gemini_model
+        self.default_temperature = settings.llm_temperature or settings.gemini_temperature
+        self.default_max_tokens = settings.llm_max_tokens or settings.gemini_max_tokens
         
         logger.info(f"Initialized Gemini LLM with model: {self.model_name}")
     
@@ -154,10 +154,10 @@ class OpenAILLM(BaseLLM):
     
     def __init__(self):
         """Initialize OpenAI client."""
-        self.client = AsyncOpenAI(api_key=settings.openai_api_key)
-        self.model_name = settings.llm_model
-        self.default_temperature = settings.llm_temperature
-        self.default_max_tokens = settings.llm_max_tokens
+        self.client = AsyncOpenAI(api_key=settings.openai_api_key or "")
+        self.model_name = settings.llm_model or settings.openai_model
+        self.default_temperature = settings.llm_temperature or settings.openai_temperature
+        self.default_max_tokens = settings.llm_max_tokens or settings.openai_max_tokens
         
         logger.info(f"Initialized OpenAI LLM with model: {self.model_name}")
     
@@ -266,5 +266,13 @@ def get_llm() -> BaseLLM:
         raise ValueError(f"Unsupported LLM provider: {settings.llm_provider}")
 
 
-# Global LLM instance
-llm = get_llm()
+# Lazy global LLM instance
+_llm: BaseLLM | None = None
+
+
+def llm() -> BaseLLM:
+    """Return (or lazily create) the global LLM instance."""
+    global _llm
+    if _llm is None:
+        _llm = get_llm()
+    return _llm
