@@ -25,8 +25,9 @@ python-dotenv==1.0.0
 python-multipart==0.0.6
 tenacity==8.2.3
 
-# Search Tools
+# Search Tools & External Bridges
 tavily-python==0.3.3
+mcp>=1.1.2
 
 # Logging & Monitoring
 python-json-logger==2.0.7

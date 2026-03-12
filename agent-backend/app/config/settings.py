@@ -86,6 +86,9 @@ class Settings(BaseSettings):
     enable_memory: bool = Field(default=False, alias="ENABLE_MEMORY")
     memory_top_k: int = Field(default=5, gt=0, alias="MEMORY_TOP_K")
     
+    # MCP (Model Context Protocol) settings
+    enable_mcp: bool = Field(default=False, alias="ENABLE_MCP")
+    
     # Agent Configuration
     max_iterations: int = Field(default=3, gt=0, le=10, alias="MAX_ITERATIONS")
     critic_threshold: float = Field(default=7.0, ge=0.0, le=10.0, alias="CRITIC_THRESHOLD")

@@ -46,3 +46,6 @@ class ResearchState(TypedDict, total=False):
     iteration: int                     # Current revision loop count (starts at 0)
     status: str                        # "running" | "approved" | "failed"
     error: Optional[str]               # Error message if something went wrong
+
+    # --- Memory (Phase 3) ---
+    past_research: list[dict[str, Any]]  # Relevant past research injected before planning

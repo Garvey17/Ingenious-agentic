@@ -7,6 +7,7 @@ from app.agents.base_agent import BaseAgent
 from app.graph.state import ResearchState
 from app.prompts.system_prompts import RESEARCHER_SYSTEM_PROMPT
 from app.tools.web_search import WebSearchTool, WebSearchInput
+import json
 from app.config.logging import get_logger
 from app.config.settings import settings
 
@@ -39,10 +40,20 @@ async def run_researcher(state: ResearchState) -> ResearchState:
 
     try:
         # Run all searches concurrently
-        tasks = [
-            WebSearchTool().execute(WebSearchInput(query=q, max_results=results_per_query))
-            for q in queries
-        ]
+        if settings.enable_mcp:
+            from app.mcp.client import mcp_client
+            logger.debug("[researcher] Routing searches via MCP")
+            tasks = [
+                mcp_client.call_tool("web_search", {"query": q, "max_results": results_per_query})
+                for q in queries
+            ]
+        else:
+            logger.debug("[researcher] Routing searches via local tool")
+            tasks = [
+                WebSearchTool().execute(WebSearchInput(query=q, max_results=results_per_query))
+                for q in queries
+            ]
+            
         search_outputs = await asyncio.gather(*tasks, return_exceptions=True)
 
         all_sources: list[dict] = []
@@ -52,7 +63,19 @@ async def run_researcher(state: ResearchState) -> ResearchState:
             if isinstance(output, Exception):
                 logger.warning(f"[researcher] Search error: {output}")
                 continue
-            for result in output.results:
+            
+            # Extract results list depending on whether it came from MCP (JSON string) or local (Pydantic model)
+            if settings.enable_mcp and isinstance(output, str):
+                try:
+                    parsed = json.loads(output)
+                    results = parsed.get("results", [])
+                except Exception as e:
+                    logger.warning(f"[researcher] Failed to parse MCP output: {e}")
+                    results = []
+            else:
+                results = output.results
+                
+            for result in results:
                 url = result.get("url", "")
                 if url and url not in seen_urls:
                     seen_urls.add(url)
