@@ -1,3 +1,3 @@
-"""App package initialization."""
-
-__version__ = "1.0.0"
+"""
+Deep Research Desk package root.
+"""
