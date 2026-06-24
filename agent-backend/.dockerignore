@@ -1,0 +1,27 @@
+# Ignore git files
+.git
+.gitignore
+
+# Ignore environment variables and secrets
+.env
+.env.*
+!.env.example
+
+# Ignore local virtual environments
+venv/
+.venv/
+env/
+
+# Ignore python caches and build files
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.pytest_cache/
+.coverage
+htmlcov/
+.ipynb_checkpoints/
+
+# Ignore OS files
+.DS_Store
+Thumbs.db
