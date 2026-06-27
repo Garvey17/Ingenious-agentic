@@ -77,7 +77,8 @@ export async function getResearchState(request_id) {
  */
 export async function checkSystemHealth() {
     try {
-        const response = await fetch('http://localhost:8000/health');
+        const healthUrl = (process.env.NEXT_PUBLIC_API_URL || 'http://localhost:8000/api').replace('/api', '/health');
+        const response = await fetch(healthUrl);
         if (!response.ok) return { healthy: false };
         return await response.json();
     } catch (error) {

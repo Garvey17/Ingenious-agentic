@@ -26,10 +26,15 @@ app = FastAPI(
 )
 
 # Configure CORS
+# NOTE: Starlette does not allow allow_credentials=True with allow_origins=["*"].
+# If wildcard is set, credentials must be disabled regardless of the env setting.
+_cors_origins = settings.cors_origins_list
+_cors_credentials = settings.cors_allow_credentials and "*" not in _cors_origins
+
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=settings.cors_origins_list,
-    allow_credentials=settings.cors_allow_credentials,
+    allow_origins=_cors_origins,
+    allow_credentials=_cors_credentials,
     allow_methods=["*"],
     allow_headers=["*"],
 )
