@@ -32,6 +32,8 @@ export default function Home() {
   const [memoryCount, setMemoryCount] = useState(0);
   const [mcpTools, setMcpTools] = useState([]);
 
+  console.log("API BASE URL:", process.env.NEXT_PUBLIC_API_URL)
+
   useEffect(() => {
     async function fetchSystemStatus() {
       try {
