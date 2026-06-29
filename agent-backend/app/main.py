@@ -26,15 +26,12 @@ app = FastAPI(
 )
 
 # Configure CORS
-# NOTE: Starlette does not allow allow_credentials=True with allow_origins=["*"].
-# If wildcard is set, credentials must be disabled regardless of the env setting.
-_cors_origins = settings.cors_origins_list
-_cors_credentials = settings.cors_allow_credentials and "*" not in _cors_origins
-
+# Hardcoded to allow all origins — credentials must be False when using wildcard.
+# This is safe because all API secrets (OpenAI, Tavily) are server-side only.
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=_cors_origins,
-    allow_credentials=_cors_credentials,
+    allow_origins=["*"],
+    allow_credentials=False,
     allow_methods=["*"],
     allow_headers=["*"],
 )
