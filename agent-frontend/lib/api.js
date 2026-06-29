@@ -1,5 +1,5 @@
 /**
- * API Client for interacting with the Deep Research Desk backend.
+ * API Client for interacting with the Ingenious Agentic backend.
  */
 
 const API_BASE_URL = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:8000/api';

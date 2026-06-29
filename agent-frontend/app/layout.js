@@ -13,7 +13,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata = {
-  title: "Deep Research Desk",
+  title: "Ingenious Agentic",
   description: "An autonomous multi-agent research pipeline powered by LangGraph, Qdrant, and MCP.",
 };
 

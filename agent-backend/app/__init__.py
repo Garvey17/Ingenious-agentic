@@ -1,3 +1,3 @@
 """
-Deep Research Desk package root.
+Ingenious Agentic package root.
 """

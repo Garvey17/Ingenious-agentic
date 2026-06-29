@@ -1,4 +1,4 @@
-# 🔍 Deep Research Desk
+# 🔍 Ingenious Agentic
 
 An autonomous, multi-agent AI system designed to research any topic, evaluate facts, and write comprehensive, publication-grade executive reports. 
 

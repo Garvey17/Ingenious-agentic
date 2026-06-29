@@ -76,7 +76,7 @@ export default function Home() {
         className="sticky top-0 z-40 px-6 py-3 flex items-center justify-between">
         <div className="flex items-center gap-2">
           <Cpu className="w-5 h-5" style={{ color: '#0073FE' }} />
-          <span className="font-semibold text-sm" style={{ color: 'var(--tx)' }}>Deep Research Desk</span>
+          <span className="font-semibold text-sm" style={{ color: 'var(--tx)' }}>Ingenious Agentic</span>
         </div>
         <ThemeToggle />
       </nav>

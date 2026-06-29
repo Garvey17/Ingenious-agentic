@@ -1,5 +1,5 @@
 """
-FastAPI application entrypoint for Deep Research Desk.
+FastAPI application entrypoint for Ingenious Agentic.
 All API routes are defined here in one place.
 """
 

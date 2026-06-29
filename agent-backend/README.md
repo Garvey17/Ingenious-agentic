@@ -1,4 +1,4 @@
-# Deep Research Desk — Backend
+# Ingenious Agentic — Backend
 
 A multi-agent AI system that autonomously researches any topic and writes a comprehensive report.
 

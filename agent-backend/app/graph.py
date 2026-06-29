@@ -1,5 +1,5 @@
 """
-LangGraph workflow definition for Deep Research Desk.
+LangGraph workflow definition for Ingenious Agentic.
 Defines the shared state and wires the 5 agents together in a pipeline.
 """
 

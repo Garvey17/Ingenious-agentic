@@ -1,5 +1,5 @@
 """
-Configuration & Logging module for the Deep Research Desk.
+Configuration & Logging module for Ingenious Agentic.
 Consolidates all app settings and basic logging setups.
 """
 
@@ -21,7 +21,7 @@ class Settings(BaseSettings):
     )
     
     # Application Settings
-    app_name: str = Field(default="Deep Research Desk", alias="APP_NAME")
+    app_name: str = Field(default="Ingenious Agentic", alias="APP_NAME")
     app_version: str = Field(default="0.1.0", alias="APP_VERSION")
     environment: Literal["development", "staging", "production"] = Field(
         default="development", alias="ENVIRONMENT"
