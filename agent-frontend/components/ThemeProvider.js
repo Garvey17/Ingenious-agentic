@@ -2,6 +2,8 @@
 
 import { createContext, useContext, useEffect, useState } from 'react';
 
+console.log("API BASE URL:", process.env.NEXT_PUBLIC_API_URL)
+
 const ThemeContext = createContext({ theme: 'light', toggle: () => { } });
 
 export function ThemeProvider({ children }) {
