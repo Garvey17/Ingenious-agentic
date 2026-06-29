@@ -23,6 +23,7 @@ app = FastAPI(
     title=settings.app_name,
     version=settings.app_version,
     description="Agentic AI research workflow system",
+    redirect_slashes=False
 )
 
 # Configure CORS
