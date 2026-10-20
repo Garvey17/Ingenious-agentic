@@ -1,0 +1,102 @@
+[
+  {
+    "id": "td_001",
+    "topic": "The impact of large language models on software engineering productivity",
+    "depth": "standard",
+    "expected_keywords": [
+      "code generation", "GitHub Copilot", "productivity", "debugging",
+      "pair programming", "automated testing", "LLM", "developer tools"
+    ],
+    "ground_truth_context": [
+      "Large language models like GPT-4 and Codex have been widely adopted in software engineering tools such as GitHub Copilot.",
+      "Studies suggest LLM-powered coding assistants can increase developer productivity by 20-55% on certain tasks.",
+      "Key benefits include faster code completion, boilerplate reduction, and automated documentation generation.",
+      "Risks include introduction of security vulnerabilities, over-reliance, and hallucinated API calls.",
+      "Automated testing and code review are emerging use cases for LLMs in the SDLC."
+    ],
+    "min_sections": 3,
+    "min_findings": 2,
+    "min_recommendations": 2,
+    "min_sources": 2
+  },
+  {
+    "id": "td_002",
+    "topic": "Retrieval-Augmented Generation (RAG) architectures and their limitations",
+    "depth": "standard",
+    "expected_keywords": [
+      "RAG", "retrieval", "vector database", "embeddings", "chunking",
+      "hallucination", "context window", "semantic search", "grounding", "architecture"
+    ],
+    "ground_truth_context": [
+      "RAG combines a retrieval step (fetching relevant documents) with LLM generation to ground responses in external knowledge.",
+      "Vector databases such as Pinecone, Qdrant, and Weaviate are used to store and retrieve document embeddings.",
+      "Chunking strategy significantly impacts retrieval quality — chunk size and overlap are key hyperparameters.",
+      "RAG can reduce hallucination but does not eliminate it; retrieved context can itself be wrong or irrelevant.",
+      "Advanced RAG variants include HyDE, multi-query retrieval, and re-ranking with cross-encoders."
+    ],
+    "min_sections": 3,
+    "min_findings": 2,
+    "min_recommendations": 2,
+    "min_sources": 2
+  },
+  {
+    "id": "td_003",
+    "topic": "Autonomous AI agents: current capabilities and safety concerns",
+    "depth": "standard",
+    "expected_keywords": [
+      "autonomous agents", "tools", "planning", "safety", "reasoning",
+      "alignment", "multi-agent", "capabilities", "concerns", "execution"
+    ],
+    "ground_truth_context": [
+      "Autonomous agents use LLMs to plan, reason, and execute multi-step tasks using external tools.",
+      "Frameworks such as LangChain, LangGraph, AutoGPT, and CrewAI enable multi-step agentic workflows.",
+      "Safety challenges include prompt injection, reward hacking, unintended side effects, and loss of human control.",
+      "The ReAct prompting pattern interleaves reasoning and action steps to improve task completion reliability.",
+      "Multi-agent systems with specialized roles (planner, researcher, critic) outperform single-agent approaches on complex tasks."
+    ],
+    "min_sections": 3,
+    "min_findings": 2,
+    "min_recommendations": 2,
+    "min_sources": 2
+  },
+  {
+    "id": "td_004",
+    "topic": "Vector databases comparison: Qdrant vs Pinecone vs Weaviate",
+    "depth": "quick",
+    "expected_keywords": [
+      "Qdrant", "Pinecone", "Weaviate", "cosine similarity", "ANN",
+      "HNSW", "filtering", "scalability", "self-hosted", "cloud"
+    ],
+    "ground_truth_context": [
+      "Qdrant is an open-source vector database written in Rust, offering self-hosted and cloud options with payload filtering.",
+      "Pinecone is a fully managed cloud vector database optimized for production-scale similarity search.",
+      "Weaviate supports hybrid search combining vector similarity with BM25 keyword search.",
+      "All three use approximate nearest neighbour (ANN) algorithms such as HNSW for fast retrieval.",
+      "Choice depends on deployment model (self-hosted vs managed), filtering needs, and throughput requirements."
+    ],
+    "min_sections": 2,
+    "min_findings": 2,
+    "min_recommendations": 1,
+    "min_sources": 2
+  },
+  {
+    "id": "td_005",
+    "topic": "Prompt engineering best practices for instruction-following LLMs",
+    "depth": "standard",
+    "expected_keywords": [
+      "prompt engineering", "chain-of-thought", "few-shot", "zero-shot",
+      "system prompt", "instructions", "temperature", "best practices", "reasoning"
+    ],
+    "ground_truth_context": [
+      "Chain-of-thought prompting encourages LLMs to reason step by step, improving performance on complex tasks.",
+      "Few-shot prompting provides concrete input-output examples, significantly improving task accuracy.",
+      "System prompts define the persona and constraints for the LLM in instruction-following models.",
+      "Temperature controls randomness: lower values produce deterministic outputs useful for structured tasks.",
+      "Prompt injection is a security vulnerability where adversarial user input overrides system instructions."
+    ],
+    "min_sections": 3,
+    "min_findings": 2,
+    "min_recommendations": 2,
+    "min_sources": 2
+  }
+]

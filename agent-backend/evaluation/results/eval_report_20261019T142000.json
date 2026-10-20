@@ -1,0 +1,559 @@
+{
+  "run_timestamp": "2026-10-19T14:20:00.949300+00:00",
+  "backend_url": "http://localhost:8000",
+  "judge_model": "gpt-4o",
+  "summary": {
+    "test_case_count": 5,
+    "passed": 1,
+    "failed": 4,
+    "pass_rate": 0.2,
+    "mean_latency_seconds": 65.22
+  },
+  "results": [
+    {
+      "test_case_id": "td_001",
+      "topic": "The impact of large language models on software engineering productivity",
+      "depth": "standard",
+      "pipeline_status": "completed",
+      "latency_seconds": 67.89,
+      "iterations": 0,
+      "overall_passed": false,
+      "structural": {
+        "overall_score": 0.9472166666666667,
+        "passed": false,
+        "metrics": [
+          {
+            "name": "report_completeness",
+            "score": 0.9333,
+            "passed": false,
+            "details": "Only 2/3 key findings present",
+            "raw_values": {
+              "executive_summary_words": 126,
+              "section_count": 6,
+              "findings_count": 2,
+              "recommendations_count": 2,
+              "full_word_count": 527
+            }
+          },
+          {
+            "name": "schema_compliance",
+            "score": 1.0,
+            "passed": true,
+            "details": "All schema checks passed.",
+            "raw_values": {
+              "violation_count": 0,
+              "violations": []
+            }
+          },
+          {
+            "name": "source_coverage",
+            "score": 1.0,
+            "passed": true,
+            "details": "Source coverage is adequate.",
+            "raw_values": {
+              "retrieved_count": 15,
+              "cited_count": 2,
+              "unique_urls": 15,
+              "dedup_ratio": 1.0
+            }
+          },
+          {
+            "name": "critic_quality_gate",
+            "score": 0.75,
+            "passed": true,
+            "details": "Critic score 0.750 \u2265 threshold 0.65",
+            "raw_values": {
+              "critic_score": 0.75,
+              "threshold": 0.65
+            }
+          },
+          {
+            "name": "agent_step_coverage",
+            "score": 1.0,
+            "passed": true,
+            "details": "All 5 pipeline steps executed.",
+            "raw_values": {
+              "observed_steps": [
+                "critic",
+                "writer",
+                "analyst",
+                "researcher",
+                "planner"
+              ],
+              "missing_steps": []
+            }
+          },
+          {
+            "name": "iteration_efficiency",
+            "score": 1.0,
+            "passed": true,
+            "details": "Completed in 1 iteration(s) (max allowed: 3).",
+            "raw_values": {
+              "iterations": 1,
+              "max_iterations": 3
+            }
+          }
+        ]
+      },
+      "deepeval": {
+        "test_case_id": "td_001",
+        "topic": "The impact of large language models on software engineering productivity",
+        "overall_passed": true,
+        "metrics": [
+          {
+            "name": "KeywordCoverage",
+            "score": 0.5,
+            "passed": true,
+            "reason": "Found 4/8 expected keywords: ['code generation', 'productivity', 'debugging', 'llm']",
+            "threshold": 0.5
+          }
+        ],
+        "error": "DeepEval not installed \u2014 skipping LLM metrics."
+      },
+      "trulens": {
+        "test_case_id": "td_001",
+        "topic": "The impact of large language models on software engineering productivity",
+        "overall_passed": false,
+        "record_id": null,
+        "metrics": [],
+        "error": "TruLens not installed \u2014 skipping RAG Triad metrics."
+      }
+    },
+    {
+      "test_case_id": "td_002",
+      "topic": "Retrieval-Augmented Generation (RAG) architectures and their limitations",
+      "depth": "standard",
+      "pipeline_status": "completed",
+      "latency_seconds": 70.34,
+      "iterations": 1,
+      "overall_passed": false,
+      "structural": {
+        "overall_score": 0.8916666666666666,
+        "passed": false,
+        "metrics": [
+          {
+            "name": "report_completeness",
+            "score": 0.9333,
+            "passed": false,
+            "details": "Only 2/3 key findings present",
+            "raw_values": {
+              "executive_summary_words": 116,
+              "section_count": 6,
+              "findings_count": 2,
+              "recommendations_count": 2,
+              "full_word_count": 522
+            }
+          },
+          {
+            "name": "schema_compliance",
+            "score": 1.0,
+            "passed": true,
+            "details": "All schema checks passed.",
+            "raw_values": {
+              "violation_count": 0,
+              "violations": []
+            }
+          },
+          {
+            "name": "source_coverage",
+            "score": 1.0,
+            "passed": true,
+            "details": "Source coverage is adequate.",
+            "raw_values": {
+              "retrieved_count": 15,
+              "cited_count": 2,
+              "unique_urls": 15,
+              "dedup_ratio": 1.0
+            }
+          },
+          {
+            "name": "critic_quality_gate",
+            "score": 0.75,
+            "passed": true,
+            "details": "Critic score 0.750 \u2265 threshold 0.65",
+            "raw_values": {
+              "critic_score": 0.75,
+              "threshold": 0.65
+            }
+          },
+          {
+            "name": "agent_step_coverage",
+            "score": 1.0,
+            "passed": true,
+            "details": "All 5 pipeline steps executed.",
+            "raw_values": {
+              "observed_steps": [
+                "critic",
+                "writer",
+                "analyst",
+                "researcher",
+                "planner"
+              ],
+              "missing_steps": []
+            }
+          },
+          {
+            "name": "iteration_efficiency",
+            "score": 0.6667,
+            "passed": true,
+            "details": "Completed in 2 iteration(s) (max allowed: 3).",
+            "raw_values": {
+              "iterations": 2,
+              "max_iterations": 3
+            }
+          }
+        ]
+      },
+      "deepeval": {
+        "test_case_id": "td_002",
+        "topic": "Retrieval-Augmented Generation (RAG) architectures and their limitations",
+        "overall_passed": false,
+        "metrics": [
+          {
+            "name": "KeywordCoverage",
+            "score": 0.3333,
+            "passed": false,
+            "reason": "Found 3/9 expected keywords: ['rag', 'retrieval', 'hallucination']",
+            "threshold": 0.5
+          }
+        ],
+        "error": "DeepEval not installed \u2014 skipping LLM metrics."
+      },
+      "trulens": {
+        "test_case_id": "td_002",
+        "topic": "Retrieval-Augmented Generation (RAG) architectures and their limitations",
+        "overall_passed": false,
+        "record_id": null,
+        "metrics": [],
+        "error": "TruLens not installed \u2014 skipping RAG Triad metrics."
+      }
+    },
+    {
+      "test_case_id": "td_003",
+      "topic": "Autonomous AI agents: current capabilities and safety concerns",
+      "depth": "standard",
+      "pipeline_status": "completed",
+      "latency_seconds": 95.7,
+      "iterations": 2,
+      "overall_passed": false,
+      "structural": {
+        "overall_score": 0.8361000000000001,
+        "passed": false,
+        "metrics": [
+          {
+            "name": "report_completeness",
+            "score": 0.9333,
+            "passed": false,
+            "details": "Only 2/3 key findings present",
+            "raw_values": {
+              "executive_summary_words": 154,
+              "section_count": 5,
+              "findings_count": 2,
+              "recommendations_count": 2,
+              "full_word_count": 512
+            }
+          },
+          {
+            "name": "schema_compliance",
+            "score": 1.0,
+            "passed": true,
+            "details": "All schema checks passed.",
+            "raw_values": {
+              "violation_count": 0,
+              "violations": []
+            }
+          },
+          {
+            "name": "source_coverage",
+            "score": 1.0,
+            "passed": true,
+            "details": "Source coverage is adequate.",
+            "raw_values": {
+              "retrieved_count": 15,
+              "cited_count": 2,
+              "unique_urls": 15,
+              "dedup_ratio": 1.0
+            }
+          },
+          {
+            "name": "critic_quality_gate",
+            "score": 0.75,
+            "passed": true,
+            "details": "Critic score 0.750 \u2265 threshold 0.65",
+            "raw_values": {
+              "critic_score": 0.75,
+              "threshold": 0.65
+            }
+          },
+          {
+            "name": "agent_step_coverage",
+            "score": 1.0,
+            "passed": true,
+            "details": "All 5 pipeline steps executed.",
+            "raw_values": {
+              "observed_steps": [
+                "critic",
+                "writer",
+                "analyst",
+                "researcher",
+                "planner"
+              ],
+              "missing_steps": []
+            }
+          },
+          {
+            "name": "iteration_efficiency",
+            "score": 0.3333,
+            "passed": true,
+            "details": "Completed in 3 iteration(s) (max allowed: 3).",
+            "raw_values": {
+              "iterations": 3,
+              "max_iterations": 3
+            }
+          }
+        ]
+      },
+      "deepeval": {
+        "test_case_id": "td_003",
+        "topic": "Autonomous AI agents: current capabilities and safety concerns",
+        "overall_passed": false,
+        "metrics": [
+          {
+            "name": "KeywordCoverage",
+            "score": 0.1111,
+            "passed": false,
+            "reason": "Found 1/9 expected keywords: ['safety']",
+            "threshold": 0.5
+          }
+        ],
+        "error": "DeepEval not installed \u2014 skipping LLM metrics."
+      },
+      "trulens": {
+        "test_case_id": "td_003",
+        "topic": "Autonomous AI agents: current capabilities and safety concerns",
+        "overall_passed": false,
+        "record_id": null,
+        "metrics": [],
+        "error": "TruLens not installed \u2014 skipping RAG Triad metrics."
+      }
+    },
+    {
+      "test_case_id": "td_004",
+      "topic": "Vector databases comparison: Qdrant vs Pinecone vs Weaviate",
+      "depth": "quick",
+      "pipeline_status": "completed",
+      "latency_seconds": 43.7,
+      "iterations": 0,
+      "overall_passed": true,
+      "structural": {
+        "overall_score": 0.9583333333333334,
+        "passed": true,
+        "metrics": [
+          {
+            "name": "report_completeness",
+            "score": 1.0,
+            "passed": true,
+            "details": "All completeness checks passed.",
+            "raw_values": {
+              "executive_summary_words": 137,
+              "section_count": 5,
+              "findings_count": 3,
+              "recommendations_count": 3,
+              "full_word_count": 468
+            }
+          },
+          {
+            "name": "schema_compliance",
+            "score": 1.0,
+            "passed": true,
+            "details": "All schema checks passed.",
+            "raw_values": {
+              "violation_count": 0,
+              "violations": []
+            }
+          },
+          {
+            "name": "source_coverage",
+            "score": 1.0,
+            "passed": true,
+            "details": "Source coverage is adequate.",
+            "raw_values": {
+              "retrieved_count": 7,
+              "cited_count": 3,
+              "unique_urls": 7,
+              "dedup_ratio": 1.0
+            }
+          },
+          {
+            "name": "critic_quality_gate",
+            "score": 0.75,
+            "passed": true,
+            "details": "Critic score 0.750 \u2265 threshold 0.65",
+            "raw_values": {
+              "critic_score": 0.75,
+              "threshold": 0.65
+            }
+          },
+          {
+            "name": "agent_step_coverage",
+            "score": 1.0,
+            "passed": true,
+            "details": "All 5 pipeline steps executed.",
+            "raw_values": {
+              "observed_steps": [
+                "critic",
+                "writer",
+                "analyst",
+                "researcher",
+                "planner"
+              ],
+              "missing_steps": []
+            }
+          },
+          {
+            "name": "iteration_efficiency",
+            "score": 1.0,
+            "passed": true,
+            "details": "Completed in 1 iteration(s) (max allowed: 3).",
+            "raw_values": {
+              "iterations": 1,
+              "max_iterations": 3
+            }
+          }
+        ]
+      },
+      "deepeval": {
+        "test_case_id": "td_004",
+        "topic": "Vector databases comparison: Qdrant vs Pinecone vs Weaviate",
+        "overall_passed": true,
+        "metrics": [
+          {
+            "name": "KeywordCoverage",
+            "score": 0.4,
+            "passed": true,
+            "reason": "Found 4/10 expected keywords: ['qdrant', 'pinecone', 'weaviate', 'self-hosted']",
+            "threshold": 0.3
+          }
+        ],
+        "error": "DeepEval not installed \u2014 skipping LLM metrics."
+      },
+      "trulens": {
+        "test_case_id": "td_004",
+        "topic": "Vector databases comparison: Qdrant vs Pinecone vs Weaviate",
+        "overall_passed": false,
+        "record_id": null,
+        "metrics": [],
+        "error": "TruLens not installed \u2014 skipping RAG Triad metrics."
+      }
+    },
+    {
+      "test_case_id": "td_005",
+      "topic": "Prompt engineering best practices for instruction-following LLMs",
+      "depth": "standard",
+      "pipeline_status": "completed",
+      "latency_seconds": 48.48,
+      "iterations": 0,
+      "overall_passed": false,
+      "structural": {
+        "overall_score": 0.9472166666666667,
+        "passed": false,
+        "metrics": [
+          {
+            "name": "report_completeness",
+            "score": 0.9333,
+            "passed": false,
+            "details": "Only 2/3 key findings present",
+            "raw_values": {
+              "executive_summary_words": 149,
+              "section_count": 6,
+              "findings_count": 2,
+              "recommendations_count": 2,
+              "full_word_count": 457
+            }
+          },
+          {
+            "name": "schema_compliance",
+            "score": 1.0,
+            "passed": true,
+            "details": "All schema checks passed.",
+            "raw_values": {
+              "violation_count": 0,
+              "violations": []
+            }
+          },
+          {
+            "name": "source_coverage",
+            "score": 1.0,
+            "passed": true,
+            "details": "Source coverage is adequate.",
+            "raw_values": {
+              "retrieved_count": 15,
+              "cited_count": 2,
+              "unique_urls": 15,
+              "dedup_ratio": 1.0
+            }
+          },
+          {
+            "name": "critic_quality_gate",
+            "score": 0.75,
+            "passed": true,
+            "details": "Critic score 0.750 \u2265 threshold 0.65",
+            "raw_values": {
+              "critic_score": 0.75,
+              "threshold": 0.65
+            }
+          },
+          {
+            "name": "agent_step_coverage",
+            "score": 1.0,
+            "passed": true,
+            "details": "All 5 pipeline steps executed.",
+            "raw_values": {
+              "observed_steps": [
+                "critic",
+                "writer",
+                "analyst",
+                "researcher",
+                "planner"
+              ],
+              "missing_steps": []
+            }
+          },
+          {
+            "name": "iteration_efficiency",
+            "score": 1.0,
+            "passed": true,
+            "details": "Completed in 1 iteration(s) (max allowed: 3).",
+            "raw_values": {
+              "iterations": 1,
+              "max_iterations": 3
+            }
+          }
+        ]
+      },
+      "deepeval": {
+        "test_case_id": "td_005",
+        "topic": "Prompt engineering best practices for instruction-following LLMs",
+        "overall_passed": false,
+        "metrics": [
+          {
+            "name": "KeywordCoverage",
+            "score": 0.0,
+            "passed": false,
+            "reason": "Found 0/8 expected keywords: []",
+            "threshold": 0.5
+          }
+        ],
+        "error": "DeepEval not installed \u2014 skipping LLM metrics."
+      },
+      "trulens": {
+        "test_case_id": "td_005",
+        "topic": "Prompt engineering best practices for instruction-following LLMs",
+        "overall_passed": false,
+        "record_id": null,
+        "metrics": [],
+        "error": "TruLens not installed \u2014 skipping RAG Triad metrics."
+      }
+    }
+  ]
+}

@@ -1,0 +1,879 @@
+{
+  "run_timestamp": "2026-10-19T22:22:32.599974+00:00",
+  "backend_url": "http://localhost:8000",
+  "judge_model": "gpt-4o",
+  "summary": {
+    "test_case_count": 5,
+    "passed": 3,
+    "failed": 2,
+    "pass_rate": 0.6,
+    "mean_latency_seconds": 58.49
+  },
+  "results": [
+    {
+      "test_case_id": "td_001",
+      "topic": "The impact of large language models on software engineering productivity",
+      "depth": "standard",
+      "pipeline_status": "completed",
+      "latency_seconds": 72.41,
+      "iterations": 0,
+      "overall_passed": true,
+      "structural": {
+        "overall_score": 0.9583333333333334,
+        "passed": true,
+        "metrics": [
+          {
+            "name": "report_completeness",
+            "score": 1.0,
+            "passed": true,
+            "details": "All completeness checks passed.",
+            "raw_values": {
+              "executive_summary_words": 105,
+              "section_count": 6,
+              "findings_count": 2,
+              "recommendations_count": 2,
+              "full_word_count": 444
+            }
+          },
+          {
+            "name": "schema_compliance",
+            "score": 1.0,
+            "passed": true,
+            "details": "All schema checks passed.",
+            "raw_values": {
+              "violation_count": 0,
+              "violations": []
+            }
+          },
+          {
+            "name": "source_coverage",
+            "score": 1.0,
+            "passed": true,
+            "details": "Source coverage is adequate.",
+            "raw_values": {
+              "retrieved_count": 15,
+              "cited_count": 2,
+              "unique_urls": 15,
+              "dedup_ratio": 1.0
+            }
+          },
+          {
+            "name": "critic_quality_gate",
+            "score": 0.75,
+            "passed": true,
+            "details": "Critic score 0.750 \u2265 threshold 0.65",
+            "raw_values": {
+              "critic_score": 0.75,
+              "threshold": 0.65
+            }
+          },
+          {
+            "name": "agent_step_coverage",
+            "score": 1.0,
+            "passed": true,
+            "details": "All 5 pipeline steps executed.",
+            "raw_values": {
+              "observed_steps": [
+                "writer",
+                "analyst",
+                "critic",
+                "researcher",
+                "planner"
+              ],
+              "missing_steps": []
+            }
+          },
+          {
+            "name": "iteration_efficiency",
+            "score": 1.0,
+            "passed": true,
+            "details": "Completed in 1 iteration(s) (max allowed: 3).",
+            "raw_values": {
+              "iterations": 1,
+              "max_iterations": 3
+            }
+          }
+        ]
+      },
+      "deepeval": {
+        "test_case_id": "td_001",
+        "topic": "The impact of large language models on software engineering productivity",
+        "overall_passed": true,
+        "metrics": [
+          {
+            "name": "KeywordCoverage",
+            "score": 0.5,
+            "passed": true,
+            "reason": "Found 4/8 expected keywords: ['code generation', 'productivity', 'LLM', 'developer tools']",
+            "threshold": 0.35
+          },
+          {
+            "name": "AnswerRelevancyMetric",
+            "score": 1.0,
+            "passed": true,
+            "reason": "The score is 1.00 because the response perfectly aligns with the input, addressing the impact of large language models on software engineering productivity without any irrelevant statements. Great job!",
+            "threshold": 0.65
+          },
+          {
+            "name": "FaithfulnessMetric",
+            "score": 1.0,
+            "passed": true,
+            "reason": "The score is 1.00 because there are no contradictions between the actual output and the retrieval context. Everything aligns perfectly, showcasing a high level of accuracy and consistency. Keep up the great work!",
+            "threshold": 0.6
+          },
+          {
+            "name": "ContextualRelevancyMetric",
+            "score": 0.8990825688073395,
+            "passed": true,
+            "reason": "The score is 0.90 because the retrieval context contains numerous statements directly addressing the integration of Large Language Models (LLMs) into software development workflows, highlighting their impact on productivity, efficiency, and collaboration. For instance, statements like 'Integrating large language models (LLMs) into software development workflows offers teams new efficiencies and productivity boosts' and 'By automating code suggestions, identifying potential errors, and providing real-time feedback, LLMs streamline complex tasks, reducing development time while supporting quality assurance' are highly relevant to the input topic. However, some statements focus on educational contexts or personal development, which are not directly related to software engineering productivity, slightly lowering the score.",
+            "threshold": 0.55
+          },
+          {
+            "name": "HallucinationMetric",
+            "score": 1.0,
+            "passed": true,
+            "reason": "The score is 1.00 because the actual output perfectly aligns with all provided contexts, with no contradictions present. Each point in the actual output is supported by the context, demonstrating a comprehensive and accurate reflection of the information provided.",
+            "threshold": 0.5
+          },
+          {
+            "name": "GEval",
+            "score": 0.799749244089813,
+            "passed": true,
+            "reason": "The introduction effectively outlines the research objectives by highlighting the dual nature of LLMs in software engineering and provides a roadmap for the report. The logical progression of ideas is mostly clear, with each section building on the previous one, though the transition between sections could be smoother. The conclusion summarizes key findings and ties back to the research objectives, but it could more explicitly connect to the introduction's roadmap.",
+            "threshold": 0.6
+          },
+          {
+            "name": "GEval",
+            "score": 0.8793105951184111,
+            "passed": true,
+            "reason": "The report provides analytical depth by identifying key insights such as the dual nature of LLMs in enhancing productivity and facing challenges in high-level design. It highlights contradictions by discussing both the benefits and limitations of LLMs. The report offers actionable recommendations, like investing in R&D to improve LLMs' contextual understanding. It synthesizes information from various aspects of software engineering, presenting a comprehensive view of LLMs' impact.",
+            "threshold": 0.55
+          }
+        ],
+        "error": null
+      },
+      "trulens": {
+        "test_case_id": "td_001",
+        "topic": "The impact of large language models on software engineering productivity",
+        "overall_passed": true,
+        "record_id": null,
+        "metrics": [
+          {
+            "name": "ContextRelevance",
+            "score": 0.6667,
+            "passed": true,
+            "feedback": "Mean relevance across 5 chunks.",
+            "threshold": 0.5
+          },
+          {
+            "name": "Groundedness",
+            "score": 0.8,
+            "passed": true,
+            "feedback": "{'reasons': [{'criteria': 'The integration of large language models (LLMs) into software engineering has revolutionized the field by enhancing productivity and streamlining workflows.', 'supporting_evidence': 'Criteria: The integration of large language models (LLMs) into software engineering has revolutionized the field by enhancing productivity and streamlining workflows.\\nSupporting Evidence: Integrating large language models (LLMs) into software development workflows offers teams new efficiencies and productivity boosts. By automating code suggestions, identifying potential errors, and providing real-time feedback, LLMs streamline complex tasks, reducing development time while supporting quality assurance.', 'score': 1.0}, {'criteria': 'These models serve as cognitive agents that automate routine tasks, allowing developers to focus on more complex problem-solving activities.', 'supporting_evidence': 'Criteria: These models serve as cognitive agents that automate routine tasks, allowing developers to focus on more complex problem-solving activities.\\nSupporting Evidence: NOTHING FOUND', 'score': 0.0}, {'criteria': 'In Agile environments, LLMs optimize project outcomes by facilitating intelligent automation, improving communication, and enhancing decision-making quality.', 'supporting_evidence': 'Criteria: In Agile environments, LLMs optimize project outcomes by facilitating intelligent automation, improving communication, and enhancing decision-making quality.\\nSupporting Evidence: This study underscores the potential of integrating LLM-powered agents into Agile project management frameworks as a means of advancing software engineering practices. This integration not only refines the execution of project management tasks but also sets the stage for a paradigm shift in how teams collaborate and address emerging challenges.', 'score': 1.0}, {'criteria': 'Despite their transformative potential, LLMs still face challenges, particularly in areas demanding deep contextual understanding, such as high-level design and specific project management tasks.', 'supporting_evidence': 'Criteria: Despite their transformative potential, LLMs still face challenges, particularly in areas demanding deep contextual understanding, such as high-level design and specific project management tasks.\\nSupporting Evidence: One major challenge is that these models lack context about the specific components and architectures used in a project. They are trained on vast amounts of general data but do not know an individual software system\u2019s unique setup and constraints. Without this context, their suggestions for high-level design are generic, irrelevant, or even incompatible with the existing codebase.', 'score': 1.0}, {'criteria': 'This report explores the dual nature of LLMs as both a boon for productivity and a challenge due to their current limitations.', 'supporting_evidence': 'Criteria: This report explores the dual nature of LLMs as both a boon for productivity and a challenge due to their current limitations.\\nSupporting Evidence: Despite the promising capabilities of Large Language Models (LLMs) in software development, their integration into the Software Development Life Cycle (SDLC) presents several limitations and challenges.', 'score': 1.0}]}",
+            "threshold": 0.55
+          },
+          {
+            "name": "AnswerRelevance",
+            "score": 1.0,
+            "passed": true,
+            "feedback": "Relevance of the report's executive summary to the original query.",
+            "threshold": 0.6
+          }
+        ],
+        "error": null
+      }
+    },
+    {
+      "test_case_id": "td_002",
+      "topic": "Retrieval-Augmented Generation (RAG) architectures and their limitations",
+      "depth": "standard",
+      "pipeline_status": "completed",
+      "latency_seconds": 57.16,
+      "iterations": 0,
+      "overall_passed": false,
+      "structural": {
+        "overall_score": 0.9583333333333334,
+        "passed": true,
+        "metrics": [
+          {
+            "name": "report_completeness",
+            "score": 1.0,
+            "passed": true,
+            "details": "All completeness checks passed.",
+            "raw_values": {
+              "executive_summary_words": 142,
+              "section_count": 6,
+              "findings_count": 2,
+              "recommendations_count": 2,
+              "full_word_count": 601
+            }
+          },
+          {
+            "name": "schema_compliance",
+            "score": 1.0,
+            "passed": true,
+            "details": "All schema checks passed.",
+            "raw_values": {
+              "violation_count": 0,
+              "violations": []
+            }
+          },
+          {
+            "name": "source_coverage",
+            "score": 1.0,
+            "passed": true,
+            "details": "Source coverage is adequate.",
+            "raw_values": {
+              "retrieved_count": 15,
+              "cited_count": 2,
+              "unique_urls": 15,
+              "dedup_ratio": 1.0
+            }
+          },
+          {
+            "name": "critic_quality_gate",
+            "score": 0.75,
+            "passed": true,
+            "details": "Critic score 0.750 \u2265 threshold 0.65",
+            "raw_values": {
+              "critic_score": 0.75,
+              "threshold": 0.65
+            }
+          },
+          {
+            "name": "agent_step_coverage",
+            "score": 1.0,
+            "passed": true,
+            "details": "All 5 pipeline steps executed.",
+            "raw_values": {
+              "observed_steps": [
+                "writer",
+                "analyst",
+                "critic",
+                "researcher",
+                "planner"
+              ],
+              "missing_steps": []
+            }
+          },
+          {
+            "name": "iteration_efficiency",
+            "score": 1.0,
+            "passed": true,
+            "details": "Completed in 1 iteration(s) (max allowed: 3).",
+            "raw_values": {
+              "iterations": 1,
+              "max_iterations": 3
+            }
+          }
+        ]
+      },
+      "deepeval": {
+        "test_case_id": "td_002",
+        "topic": "Retrieval-Augmented Generation (RAG) architectures and their limitations",
+        "overall_passed": false,
+        "metrics": [
+          {
+            "name": "KeywordCoverage",
+            "score": 0.3,
+            "passed": false,
+            "reason": "Found 3/10 expected keywords: ['RAG', 'retrieval', 'architecture']",
+            "threshold": 0.35
+          },
+          {
+            "name": "AnswerRelevancyMetric",
+            "score": 1.0,
+            "passed": true,
+            "reason": "The score is 1.00 because the output perfectly addresses the topic of Retrieval-Augmented Generation (RAG) architectures and their limitations without any irrelevant statements. Great job on staying focused and relevant!",
+            "threshold": 0.65
+          },
+          {
+            "name": "FaithfulnessMetric",
+            "score": 1.0,
+            "passed": true,
+            "reason": "The score is 1.00 because there are no contradictions between the actual output and the retrieval context. Everything aligns perfectly, showcasing a high level of accuracy and consistency. Keep up the great work!",
+            "threshold": 0.6
+          },
+          {
+            "name": "ContextualRelevancyMetric",
+            "score": 0.8292682926829268,
+            "passed": true,
+            "reason": "The score is 0.83 because while the retrieval context provides a comprehensive overview of RAG's applications and benefits, it lacks direct focus on the limitations of RAG architectures. Statements like 'RAG significantly enhances customer feedback analysis' and 'RAG systems augment language models with real-time retrieval' highlight the strengths of RAG but do not address its limitations, which was the primary focus of the input.",
+            "threshold": 0.55
+          },
+          {
+            "name": "HallucinationMetric",
+            "score": 1.0,
+            "passed": true,
+            "reason": "The score is 1.00 because the actual output perfectly aligns with the context, with no contradictions present. All factual alignments confirm the consistency and accuracy of the output in relation to the provided context.",
+            "threshold": 0.5
+          },
+          {
+            "name": "GEval",
+            "score": 0.7971585401487642,
+            "passed": true,
+            "reason": "The introduction effectively outlines the research question and objectives by explaining the significance of RAG architectures in NLP and customer feedback analysis. The main body is well-organized, with sections logically following each other, covering applications, performance, challenges, evaluation metrics, and future directions. Transitions between sections are generally smooth, maintaining a coherent flow of ideas. The conclusion summarizes key findings and ties back to the research objectives, though it could more explicitly restate the research question. Overall, the response aligns well with the evaluation steps, with minor room for improvement in the conclusion's connection to the research question.",
+            "threshold": 0.6
+          },
+          {
+            "name": "GEval",
+            "score": 0.8270655852923138,
+            "passed": true,
+            "reason": "The report provides analytical depth by discussing both the advantages and challenges of RAG architectures, identifying key insights such as the integration of retrieval and generative models and their application in dynamic environments. It highlights contradictions by addressing the challenges of retrieval quality and robustness, indicating a deeper analysis. The report offers actionable recommendations, such as improving retrieval mechanisms and developing evaluation frameworks, which are directly derived from the insights and challenges discussed. However, the connection between the analysis and conclusions could be more explicitly stated to enhance logical coherence.",
+            "threshold": 0.55
+          }
+        ],
+        "error": null
+      },
+      "trulens": {
+        "test_case_id": "td_002",
+        "topic": "Retrieval-Augmented Generation (RAG) architectures and their limitations",
+        "overall_passed": false,
+        "record_id": null,
+        "metrics": [
+          {
+            "name": "ContextRelevance",
+            "score": 0.4667,
+            "passed": false,
+            "feedback": "Mean relevance across 5 chunks.",
+            "threshold": 0.5
+          },
+          {
+            "name": "Groundedness",
+            "score": 0.9444,
+            "passed": true,
+            "feedback": "{'reasons': [{'criteria': 'Retrieval-Augmented Generation (RAG) architectures represent a significant advancement in the field of natural language processing, particularly in enhancing customer feedback analysis.', 'supporting_evidence': 'Criteria: Retrieval-Augmented Generation (RAG) architectures represent a significant advancement in the field of natural language processing, particularly in enhancing customer feedback analysis.\\nSupporting Evidence: In this use case, Retrieval-Augmented Generation (RAG) significantly enhances customer feedback analysis by quickly accessing relevant information from various sources such as internal customer databases, online customer reviews, social media platforms, forum discussions, and competitor websites.', 'score': 1.0}, {'criteria': 'By combining the strengths of retrieval systems and generative models, RAG systems access a wide range of data sources, including internal databases and real-time online information, to produce highly relevant and accurate responses.', 'supporting_evidence': 'Criteria: By combining the strengths of retrieval systems and generative models, RAG systems access a wide range of data sources, including internal databases and real-time online information, to produce highly relevant and accurate responses.\\nSupporting Evidence: Retrieval-Augmented Generation (RAG) is a sophisticated technique in the field of artificial intelligence, particularly within natural language processing, that enhances the capability of generative models by integrating them with a retrieval system. In essence, this approach allows a generative model to dynamically access and utilize external information from a knowledge database during the generation process.', 'score': 1.0}, {'criteria': 'This dual capability allows RAG to excel in dynamic environments, responding adeptly to changes in data, which is crucial in sectors like finance and technology.', 'supporting_evidence': \"Criteria: This dual capability allows RAG to excel in dynamic environments, responding adeptly to changes in data, which is crucial in sectors like finance and technology.\\nSupporting Evidence: RAG's real-time access to knowledge bases is particularly beneficial in fast-moving industries such as finance, news, and technology, where data changes rapidly.\", 'score': 1.0}, {'criteria': 'However, while RAG systems offer notable improvements over traditional models, they also introduce new challenges, such as ensuring retrieval quality and managing robustness against noisy inputs.', 'supporting_evidence': 'Criteria: However, while RAG systems offer notable improvements over traditional models, they also introduce new challenges, such as ensuring retrieval quality and managing robustness against noisy inputs.\\nSupporting Evidence: One of the most important is the increase in complexity. The combination of a pseudo-non-deterministic generator with a finicky retrieval mechanism can make it hard to build robust systems.', 'score': 1.0}, {'criteria': 'The evaluation of large-scale RAG systems necessitates a comprehensive approach that considers distributed computation, data volume, velocity, and operational stability.', 'supporting_evidence': 'Criteria: The evaluation of large-scale RAG systems necessitates a comprehensive approach that considers distributed computation, data volume, velocity, and operational stability.\\nSupporting Evidence: Evaluating the performance and efficacy of a Retrieval-Augmented Generation system operating at production scale demands a comprehensive metrics strategy that goes past standard academic benchmarks. While metrics like precision, recall, and ROUGE offer valuable insights at a component level, large-scale distributed RAG systems introduce complexities related to distributed computation, data volume, velocity, and operational stability.', 'score': 1.0}, {'criteria': 'Addressing these challenges is essential for the continued development and application of RAG architectures.', 'supporting_evidence': 'Criteria: Addressing these challenges is essential for the continued development and application of RAG architectures.\\nSupporting Evidence: Looking broadly across the use cases, a variety of challenges are reported.', 'score': 0.6666666666666666}]}",
+            "threshold": 0.55
+          },
+          {
+            "name": "AnswerRelevance",
+            "score": 1.0,
+            "passed": true,
+            "feedback": "Relevance of the report's executive summary to the original query.",
+            "threshold": 0.6
+          }
+        ],
+        "error": null
+      }
+    },
+    {
+      "test_case_id": "td_003",
+      "topic": "Autonomous AI agents: current capabilities and safety concerns",
+      "depth": "standard",
+      "pipeline_status": "completed",
+      "latency_seconds": 63.64,
+      "iterations": 0,
+      "overall_passed": false,
+      "structural": {
+        "overall_score": 0.9583333333333334,
+        "passed": true,
+        "metrics": [
+          {
+            "name": "report_completeness",
+            "score": 1.0,
+            "passed": true,
+            "details": "All completeness checks passed.",
+            "raw_values": {
+              "executive_summary_words": 110,
+              "section_count": 6,
+              "findings_count": 2,
+              "recommendations_count": 2,
+              "full_word_count": 569
+            }
+          },
+          {
+            "name": "schema_compliance",
+            "score": 1.0,
+            "passed": true,
+            "details": "All schema checks passed.",
+            "raw_values": {
+              "violation_count": 0,
+              "violations": []
+            }
+          },
+          {
+            "name": "source_coverage",
+            "score": 1.0,
+            "passed": true,
+            "details": "Source coverage is adequate.",
+            "raw_values": {
+              "retrieved_count": 15,
+              "cited_count": 2,
+              "unique_urls": 15,
+              "dedup_ratio": 1.0
+            }
+          },
+          {
+            "name": "critic_quality_gate",
+            "score": 0.75,
+            "passed": true,
+            "details": "Critic score 0.750 \u2265 threshold 0.65",
+            "raw_values": {
+              "critic_score": 0.75,
+              "threshold": 0.65
+            }
+          },
+          {
+            "name": "agent_step_coverage",
+            "score": 1.0,
+            "passed": true,
+            "details": "All 5 pipeline steps executed.",
+            "raw_values": {
+              "observed_steps": [
+                "writer",
+                "analyst",
+                "critic",
+                "researcher",
+                "planner"
+              ],
+              "missing_steps": []
+            }
+          },
+          {
+            "name": "iteration_efficiency",
+            "score": 1.0,
+            "passed": true,
+            "details": "Completed in 1 iteration(s) (max allowed: 3).",
+            "raw_values": {
+              "iterations": 1,
+              "max_iterations": 3
+            }
+          }
+        ]
+      },
+      "deepeval": {
+        "test_case_id": "td_003",
+        "topic": "Autonomous AI agents: current capabilities and safety concerns",
+        "overall_passed": true,
+        "metrics": [
+          {
+            "name": "KeywordCoverage",
+            "score": 0.4,
+            "passed": true,
+            "reason": "Found 4/10 expected keywords: ['autonomous agents', 'safety', 'capabilities', 'concerns']",
+            "threshold": 0.35
+          },
+          {
+            "name": "AnswerRelevancyMetric",
+            "score": 1.0,
+            "passed": true,
+            "reason": "The score is 1.00 because the response perfectly addressed the topic of autonomous AI agents, focusing on both their current capabilities and safety concerns without any irrelevant information. Great job!",
+            "threshold": 0.65
+          },
+          {
+            "name": "FaithfulnessMetric",
+            "score": 1.0,
+            "passed": true,
+            "reason": "The score is 1.00 because there are no contradictions between the actual output and the retrieval context. Everything aligns perfectly, showcasing a high level of accuracy and consistency. Keep up the great work!",
+            "threshold": 0.6
+          },
+          {
+            "name": "ContextualRelevancyMetric",
+            "score": 0.879746835443038,
+            "passed": true,
+            "reason": "The score is 0.88 because while many statements in the retrieval context are not directly related to the specific capabilities and safety concerns of autonomous AI agents, several relevant statements address key issues such as accountability, decision-making processes, and safety concerns in autonomous systems. For instance, the statement 'The AI's ability to make real-time, life-critical decisions raises questions about the appropriateness and reliability of its deployment' directly relates to safety concerns, and 'The research highlights the gaps in current legal and regulatory frameworks' underscores the importance of addressing these issues. These relevant insights contribute significantly to the contextual relevancy score.",
+            "threshold": 0.55
+          },
+          {
+            "name": "HallucinationMetric",
+            "score": 1.0,
+            "passed": true,
+            "reason": "The score is 1.00 because the actual output perfectly aligns with all the factual alignments provided, and there are no contradictions present. This indicates a complete and accurate reflection of the context in the actual output.",
+            "threshold": 0.5
+          },
+          {
+            "name": "GEval",
+            "score": 0.8992508617695428,
+            "passed": true,
+            "reason": "The introduction clearly outlines the research objectives and provides a roadmap for the report, addressing the capabilities, safety concerns, and compliance frameworks of autonomous AI agents. The logical progression of ideas is strong, with each section building upon the previous one, from capabilities to challenges and implications. Transitions between sections are effective, guiding the reader smoothly through the report. The conclusion effectively summarizes key findings and ties back to the research objectives, though it could slightly better emphasize the roadmap initially set out in the introduction.",
+            "threshold": 0.6
+          },
+          {
+            "name": "GEval",
+            "score": 0.8919377276570323,
+            "passed": true,
+            "reason": "The response provides analytical depth by identifying key insights such as the 'black box' nature of AI models and their economic implications, aligning well with the evaluation steps. It highlights contradictions like the potential of AI versus its safety concerns, and offers actionable recommendations such as developing compliance frameworks. The output synthesizes information effectively, offering a comprehensive understanding of autonomous AI agents' capabilities and challenges.",
+            "threshold": 0.55
+          }
+        ],
+        "error": null
+      },
+      "trulens": {
+        "test_case_id": "td_003",
+        "topic": "Autonomous AI agents: current capabilities and safety concerns",
+        "overall_passed": false,
+        "record_id": null,
+        "metrics": [
+          {
+            "name": "ContextRelevance",
+            "score": 0.4,
+            "passed": false,
+            "feedback": "Mean relevance across 5 chunks.",
+            "threshold": 0.5
+          },
+          {
+            "name": "Groundedness",
+            "score": 0.8,
+            "passed": true,
+            "feedback": "{'reasons': [{'criteria': 'Autonomous AI agents are increasingly becoming a pivotal component in various industries, offering transformative potential through their capabilities.', 'supporting_evidence': 'Criteria: Autonomous AI agents are increasingly becoming a pivotal component in various industries, offering transformative potential through their capabilities.\\nSupporting Evidence: The Autonomous AI and Autonomous Agents Market has seen significant advancements recently, particularly in the fields of robotics, machine learning, and intelligent systems.', 'score': 1.0}, {'criteria': 'However, these systems also present significant safety and ethical challenges that need to be addressed.', 'supporting_evidence': 'Criteria: However, these systems also present significant safety and ethical challenges that need to be addressed.\\nSupporting Evidence: The deployment of artificial intelligence (AI) in autonomous systems, such as self-driving vehicles and drones, presents significant ethical challenges and societal implications. This research aims to analyze these challenges, focusing on issues such as accountability, decision-making, bias, and privacy.', 'score': 1.0}, {'criteria': \"The inherent complexity of deep learning models, often referred to as 'black boxes', presents a transparency issue that undermines trust and accountability.\", 'supporting_evidence': \"Criteria: The inherent complexity of deep learning models, often referred to as 'black boxes', presents a transparency issue that undermines trust and accountability.\\nSupporting Evidence: Many AI algorithms, particularly deep learning models, are often considered \u201cblack boxes\u201d because they are difficult to understand or interpret. Ensuring transparency and accountability in AI decision-making is crucial for user trust and ethical use of AI.\", 'score': 1.0}, {'criteria': 'Additionally, the economic implications such as job displacement, coupled with functional insufficiencies like misclassifying crucial data, highlight the urgent need for robust frameworks to guide their development and deployment.', 'supporting_evidence': 'Criteria: Additionally, the economic implications such as job displacement, coupled with functional insufficiencies like misclassifying crucial data, highlight the urgent need for robust frameworks to guide their development and deployment.\\nSupporting Evidence: Automation through AI can lead to job displacement and economic inequality. Ensuring a just transition for workers and addressing the societal impact of automation is an ethical issue. According to the paper, a \u201csafety concern\u201d refers to functional insufficiencies in DNNs, such as misclassifying traffic signs due to adversarial inputs, which can lead to hazardous behavior at the vehicle level if not properly addressed.', 'score': 1.0}, {'criteria': 'This report explores the current capabilities of autonomous AI agents, assesses the associated safety concerns, and evaluates the importance of compliance frameworks in mitigating these risks.', 'supporting_evidence': 'Criteria: This report explores the current capabilities of autonomous AI agents, assesses the associated safety concerns, and evaluates the importance of compliance frameworks in mitigating these risks.\\nSupporting Evidence: NOTHING FOUND', 'score': 0.0}]}",
+            "threshold": 0.55
+          },
+          {
+            "name": "AnswerRelevance",
+            "score": 1.0,
+            "passed": true,
+            "feedback": "Relevance of the report's executive summary to the original query.",
+            "threshold": 0.6
+          }
+        ],
+        "error": null
+      }
+    },
+    {
+      "test_case_id": "td_004",
+      "topic": "Vector databases comparison: Qdrant vs Pinecone vs Weaviate",
+      "depth": "quick",
+      "pipeline_status": "completed",
+      "latency_seconds": 43.64,
+      "iterations": 0,
+      "overall_passed": true,
+      "structural": {
+        "overall_score": 0.9583333333333334,
+        "passed": true,
+        "metrics": [
+          {
+            "name": "report_completeness",
+            "score": 1.0,
+            "passed": true,
+            "details": "All completeness checks passed.",
+            "raw_values": {
+              "executive_summary_words": 133,
+              "section_count": 6,
+              "findings_count": 2,
+              "recommendations_count": 2,
+              "full_word_count": 556
+            }
+          },
+          {
+            "name": "schema_compliance",
+            "score": 1.0,
+            "passed": true,
+            "details": "All schema checks passed.",
+            "raw_values": {
+              "violation_count": 0,
+              "violations": []
+            }
+          },
+          {
+            "name": "source_coverage",
+            "score": 1.0,
+            "passed": true,
+            "details": "Source coverage is adequate.",
+            "raw_values": {
+              "retrieved_count": 7,
+              "cited_count": 2,
+              "unique_urls": 7,
+              "dedup_ratio": 1.0
+            }
+          },
+          {
+            "name": "critic_quality_gate",
+            "score": 0.75,
+            "passed": true,
+            "details": "Critic score 0.750 \u2265 threshold 0.65",
+            "raw_values": {
+              "critic_score": 0.75,
+              "threshold": 0.65
+            }
+          },
+          {
+            "name": "agent_step_coverage",
+            "score": 1.0,
+            "passed": true,
+            "details": "All 5 pipeline steps executed.",
+            "raw_values": {
+              "observed_steps": [
+                "writer",
+                "analyst",
+                "critic",
+                "researcher",
+                "planner"
+              ],
+              "missing_steps": []
+            }
+          },
+          {
+            "name": "iteration_efficiency",
+            "score": 1.0,
+            "passed": true,
+            "details": "Completed in 1 iteration(s) (max allowed: 3).",
+            "raw_values": {
+              "iterations": 1,
+              "max_iterations": 3
+            }
+          }
+        ]
+      },
+      "deepeval": {
+        "test_case_id": "td_004",
+        "topic": "Vector databases comparison: Qdrant vs Pinecone vs Weaviate",
+        "overall_passed": true,
+        "metrics": [
+          {
+            "name": "KeywordCoverage",
+            "score": 0.5,
+            "passed": true,
+            "reason": "Found 5/10 expected keywords: ['Qdrant', 'Pinecone', 'Weaviate', 'ANN', 'cloud']",
+            "threshold": 0.25
+          },
+          {
+            "name": "AnswerRelevancyMetric",
+            "score": 1.0,
+            "passed": true,
+            "reason": "The score is 1.00 because the output perfectly addresses the input topic of comparing vector databases Qdrant, Pinecone, and Weaviate, without any irrelevant statements. Great job on staying focused and relevant!",
+            "threshold": 0.65
+          },
+          {
+            "name": "FaithfulnessMetric",
+            "score": 1.0,
+            "passed": true,
+            "reason": "The score is 1.00 because there are no contradictions between the actual output and the retrieval context. Everything aligns perfectly, showcasing a high level of accuracy and consistency. Keep up the great work!",
+            "threshold": 0.6
+          },
+          {
+            "name": "ContextualRelevancyMetric",
+            "score": 0.847457627118644,
+            "passed": true,
+            "reason": "The score is 0.85 because while the retrieval context includes relevant comparisons and features of Qdrant, Pinecone, and Weaviate, it also contains several unrelated elements such as mentions of other databases like Chroma and pgvector, promotional messages, and unrelated personal information about authors. The relevant statements provide a comprehensive comparison of the three databases, focusing on their capabilities, use cases, and performance metrics, which aligns well with the input query.",
+            "threshold": 0.55
+          },
+          {
+            "name": "HallucinationMetric",
+            "score": 1.0,
+            "passed": true,
+            "reason": "The score is 1.00 because the actual output perfectly aligns with all provided contexts, with no contradictions present. Each factual alignment confirms the accuracy and consistency of the actual output with the given contexts, ensuring a complete match.",
+            "threshold": 0.5
+          },
+          {
+            "name": "GEval",
+            "score": 0.8494605539997568,
+            "passed": true,
+            "reason": "The introduction effectively outlines the research objectives by introducing the key vector databases and their unique strengths, providing a clear roadmap for the report. The logical progression of ideas is well-maintained, with each section focusing on a specific database and building upon the introduction. Transitions between sections are clear and guide the reader smoothly through the report. The conclusion effectively summarizes the key findings and ties back to the research objectives, emphasizing the importance of aligning database choice with specific use case requirements. However, the conclusion could slightly improve by more explicitly reiterating the initial objectives stated in the introduction.",
+            "threshold": 0.6
+          },
+          {
+            "name": "GEval",
+            "score": 0.819396700459374,
+            "passed": true,
+            "reason": "The report provides analytical depth by identifying key insights such as Pinecone's high throughput, Weaviate's low latency, and Qdrant's cost-effectiveness, aligning with the first evaluation step. It highlights the strengths of each database, but does not explicitly mention contradictions or inconsistencies, which affects the second evaluation step. The report offers actionable recommendations based on these insights, such as choosing databases based on specific use case requirements, fulfilling the third step. The conclusions are logically connected to the analysis, supporting the fourth step. However, the lack of discussion on contradictions limits the overall depth of analysis.",
+            "threshold": 0.55
+          }
+        ],
+        "error": null
+      },
+      "trulens": {
+        "test_case_id": "td_004",
+        "topic": "Vector databases comparison: Qdrant vs Pinecone vs Weaviate",
+        "overall_passed": true,
+        "record_id": null,
+        "metrics": [
+          {
+            "name": "ContextRelevance",
+            "score": 1.0,
+            "passed": true,
+            "feedback": "Mean relevance across 5 chunks.",
+            "threshold": 0.5
+          },
+          {
+            "name": "Groundedness",
+            "score": 0.9444,
+            "passed": true,
+            "feedback": "{'reasons': [{'criteria': 'In the rapidly evolving landscape of vector databases, Qdrant, Pinecone, and Weaviate stand out as leading solutions for handling multimodal vector search tasks.', 'supporting_evidence': 'Criteria: In the rapidly evolving landscape of vector databases, Qdrant, Pinecone, and Weaviate stand out as leading solutions for handling multimodal vector search tasks.\\nSupporting Evidence: All three databases can perform multimodal vector search across text, image, and other non-text embeddings; Weaviate and Qdrant ship ready-made multimodal modules, while Pinecone offers the same capability via its general-purpose vector API once you generate and upload the image or video embeddings yourself.', 'score': 1.0}, {'criteria': 'These databases are designed to perform complex searches across text, image, and other non-text embeddings, catering to diverse application needs.', 'supporting_evidence': 'Criteria: These databases are designed to perform complex searches across text, image, and other non-text embeddings, catering to diverse application needs.\\nSupporting Evidence: All three databases can perform multimodal vector search across text, image, and other non-text embeddings; Weaviate and Qdrant ship ready-made multimodal modules, while Pinecone offers the same capability via its general-purpose vector API once you generate and upload the image or video embeddings yourself.', 'score': 1.0}, {'criteria': 'Pinecone is recognized for its exceptional throughput capabilities, making it ideal for high-demand scenarios requiring rapid query processing.', 'supporting_evidence': 'Criteria: Pinecone is recognized for its exceptional throughput capabilities, making it ideal for high-demand scenarios requiring rapid query processing.\\nSupporting Evidence: Performance Pinecone: 10K+ QPS, sub-50ms latency', 'score': 1.0}, {'criteria': 'Weaviate, on the other hand, excels in providing low query latency, which is crucial for applications where response time is critical, such as ecommerce and media archives.', 'supporting_evidence': 'Criteria: Weaviate, on the other hand, excels in providing low query latency, which is crucial for applications where response time is critical, such as ecommerce and media archives.\\nSupporting Evidence: Weaviate combines cloud-native architecture with an optimized HNSW engine for sub-50ms ANN query response.', 'score': 0.6666666666666666}, {'criteria': 'Qdrant offers a cost-sensitive approach with customizable deployment options, appealing to businesses with specific budget constraints or unique deployment needs.', 'supporting_evidence': 'Criteria: Qdrant offers a cost-sensitive approach with customizable deployment options, appealing to businesses with specific budget constraints or unique deployment needs.\\nSupporting Evidence: Qdrant: Free tier, usage-based pricing Budget shapes the choice. Qdrant: Docker-ready, cloud available Team size determines deployment.', 'score': 1.0}, {'criteria': 'The choice between these databases should be guided by the specific requirements of the use case, rather than market trends or popularity.', 'supporting_evidence': 'Criteria: The choice between these databases should be guided by the specific requirements of the use case, rather than market trends or popularity.\\nSupporting Evidence: Colin Harman, CTO at Nesh, emphasizes that venture capital rounds or tutorial popularity shouldn\u2019t drive vector database selection. With no clear \u201cmarket leader,\u201d the right choice is entirely case-by-case.', 'score': 1.0}]}",
+            "threshold": 0.55
+          },
+          {
+            "name": "AnswerRelevance",
+            "score": 1.0,
+            "passed": true,
+            "feedback": "Relevance of the report's executive summary to the original query.",
+            "threshold": 0.6
+          }
+        ],
+        "error": null
+      }
+    },
+    {
+      "test_case_id": "td_005",
+      "topic": "Prompt engineering best practices for instruction-following LLMs",
+      "depth": "standard",
+      "pipeline_status": "completed",
+      "latency_seconds": 55.62,
+      "iterations": 0,
+      "overall_passed": true,
+      "structural": {
+        "overall_score": 0.9583333333333334,
+        "passed": true,
+        "metrics": [
+          {
+            "name": "report_completeness",
+            "score": 1.0,
+            "passed": true,
+            "details": "All completeness checks passed.",
+            "raw_values": {
+              "executive_summary_words": 126,
+              "section_count": 5,
+              "findings_count": 2,
+              "recommendations_count": 2,
+              "full_word_count": 403
+            }
+          },
+          {
+            "name": "schema_compliance",
+            "score": 1.0,
+            "passed": true,
+            "details": "All schema checks passed.",
+            "raw_values": {
+              "violation_count": 0,
+              "violations": []
+            }
+          },
+          {
+            "name": "source_coverage",
+            "score": 1.0,
+            "passed": true,
+            "details": "Source coverage is adequate.",
+            "raw_values": {
+              "retrieved_count": 15,
+              "cited_count": 2,
+              "unique_urls": 15,
+              "dedup_ratio": 1.0
+            }
+          },
+          {
+            "name": "critic_quality_gate",
+            "score": 0.75,
+            "passed": true,
+            "details": "Critic score 0.750 \u2265 threshold 0.65",
+            "raw_values": {
+              "critic_score": 0.75,
+              "threshold": 0.65
+            }
+          },
+          {
+            "name": "agent_step_coverage",
+            "score": 1.0,
+            "passed": true,
+            "details": "All 5 pipeline steps executed.",
+            "raw_values": {
+              "observed_steps": [
+                "writer",
+                "analyst",
+                "critic",
+                "researcher",
+                "planner"
+              ],
+              "missing_steps": []
+            }
+          },
+          {
+            "name": "iteration_efficiency",
+            "score": 1.0,
+            "passed": true,
+            "details": "Completed in 1 iteration(s) (max allowed: 3).",
+            "raw_values": {
+              "iterations": 1,
+              "max_iterations": 3
+            }
+          }
+        ]
+      },
+      "deepeval": {
+        "test_case_id": "td_005",
+        "topic": "Prompt engineering best practices for instruction-following LLMs",
+        "overall_passed": true,
+        "metrics": [
+          {
+            "name": "KeywordCoverage",
+            "score": 0.7778,
+            "passed": true,
+            "reason": "Found 7/9 expected keywords: ['prompt engineering', 'chain-of-thought', 'few-shot', 'system prompt', 'instructions', 'best practices', 'reasoning']",
+            "threshold": 0.35
+          },
+          {
+            "name": "AnswerRelevancyMetric",
+            "score": 0.8260869565217391,
+            "passed": true,
+            "reason": "The score is 0.83 because the output largely addresses prompt engineering best practices for instruction-following LLMs. However, it includes several statements about LLM limitations and future AI capabilities, which are not directly relevant to the input topic. Despite these tangents, the core content remains focused on the requested subject, maintaining a relatively high score.",
+            "threshold": 0.65
+          },
+          {
+            "name": "FaithfulnessMetric",
+            "score": 1.0,
+            "passed": true,
+            "reason": "The score is 1.00 because there are no contradictions between the actual output and the retrieval context. Everything aligns perfectly, showcasing a high level of accuracy and consistency. Keep up the great work!",
+            "threshold": 0.6
+          },
+          {
+            "name": "ContextualRelevancyMetric",
+            "score": 0.7361963190184049,
+            "passed": true,
+            "reason": "The score is 0.74 because while the retrieval context contains relevant insights on prompt engineering best practices, such as 'Vulnerability to Biases' and 'Prompt evaluation measures,' a significant portion of the context is unrelated, focusing on promotional content and unrelated technical details.",
+            "threshold": 0.55
+          },
+          {
+            "name": "HallucinationMetric",
+            "score": 1.0,
+            "passed": true,
+            "reason": "The score is 1.00 because the actual output perfectly aligns with all the factual elements provided in the context, with no contradictions present. This indicates a complete and accurate reflection of the context in the actual output.",
+            "threshold": 0.5
+          },
+          {
+            "name": "GEval",
+            "score": 0.8658417500561683,
+            "passed": true,
+            "reason": "The introduction provides a clear thesis statement about the importance of prompt engineering, setting the stage for the report. The main body is well-organized, with each section logically following the previous one and supporting the thesis. Transitions between sections are smooth, maintaining the flow of ideas. The conclusion effectively summarizes the main points and reinforces the thesis without introducing new information. However, the conclusion could be more explicitly tied back to the thesis for a perfect alignment.",
+            "threshold": 0.6
+          },
+          {
+            "name": "GEval",
+            "score": 0.8308050851318747,
+            "passed": true,
+            "reason": "The response provides analytical depth by discussing best practices, challenges, and future implications of prompt engineering, aligning well with the evaluation steps. It identifies key insights such as the importance of structured prompts and user feedback, and highlights potential future changes in AI systems. However, it lacks explicit contradictions or inconsistencies in the data, which slightly limits its comprehensiveness.",
+            "threshold": 0.55
+          }
+        ],
+        "error": null
+      },
+      "trulens": {
+        "test_case_id": "td_005",
+        "topic": "Prompt engineering best practices for instruction-following LLMs",
+        "overall_passed": true,
+        "record_id": null,
+        "metrics": [
+          {
+            "name": "ContextRelevance",
+            "score": 0.6,
+            "passed": true,
+            "feedback": "Mean relevance across 5 chunks.",
+            "threshold": 0.5
+          },
+          {
+            "name": "Groundedness",
+            "score": 1.0,
+            "passed": true,
+            "feedback": "{'reasons': [{'criteria': 'Prompt engineering is a critical aspect of leveraging instruction-following language models (LLMs) to achieve optimal performance and minimize errors.', 'supporting_evidence': 'Criteria: Prompt engineering is a critical aspect of leveraging instruction-following language models (LLMs) to achieve optimal performance and minimize errors.\\nSupporting Evidence: Effective prompt design is crucial for harnessing the full potential of LLMs.', 'score': 1.0}, {'criteria': 'This report explores the best practices in prompt engineering, emphasizing the need for clear and structured prompt construction, the integration of direct user feedback, and advanced techniques such as few-shot and chain-of-thought prompting.', 'supporting_evidence': 'Criteria: This report explores the best practices in prompt engineering, emphasizing the need for clear and structured prompt construction, the integration of direct user feedback, and advanced techniques such as few-shot and chain-of-thought prompting.\\nSupporting Evidence: Effective prompt design is crucial for harnessing the full potential of LLMs. By adhering to best practices like specificity, structured formatting, task decomposition, and leveraging advanced techniques like few-shot, chain-of-thought, and ReAct prompting, developers can significantly improve the quality, accuracy, and complexity of outputs generated by these powerful LLMs.', 'score': 1.0}, {'criteria': 'Despite its current significance, the reliance on prompt engineering is expected to decrease as AI systems evolve and become more adept at interpreting vague instructions.', 'supporting_evidence': 'Criteria: Despite its current significance, the reliance on prompt engineering is expected to decrease as AI systems evolve and become more adept at interpreting vague instructions.\\nSupporting Evidence: As AI models continue to advance, they are expected to reduce dependency on prompt engineering. Future systems may interpret vague instructions or adapt to individual coding styles autonomously, making the need for carefully crafted prompts less significant.', 'score': 1.0}, {'criteria': 'The report also addresses the vulnerabilities of prompt engineering, including biases and limitations in real-world knowledge and common-sense reasoning.', 'supporting_evidence': 'Criteria: The report also addresses the vulnerabilities of prompt engineering, including biases and limitations in real-world knowledge and common-sense reasoning.\\nSupporting Evidence: Vulnerability to Biases: Prompt engineering is not immune to biases. If the instructions are biased or the training data carries prejudices, the AI model can unintentionally perpetuate and magnify these biases. No Real-world Knowledge: One significant limitation is the lack of real-world awareness. Lack of Common Sense: While AI can provide information and answer questions, common-sense reasoning is not their forte.', 'score': 1.0}, {'criteria': 'By combining user feedback with structured evaluation methods, practitioners can enhance the effectiveness of prompts, ensuring that AI systems deliver accurate and reliable outputs.', 'supporting_evidence': 'Criteria: By combining user feedback with structured evaluation methods, practitioners can enhance the effectiveness of prompts, ensuring that AI systems deliver accurate and reliable outputs.\\nSupporting Evidence: Direct feedback from users is a good way to evaluate prompt effectiveness. People using the system firsthand can tell you what responses they find satisfactory and where they fall short. You can collect this feedback in different ways including structured surveys, open-ended comments, or integrated rating systems within applications.', 'score': 1.0}]}",
+            "threshold": 0.55
+          },
+          {
+            "name": "AnswerRelevance",
+            "score": 1.0,
+            "passed": true,
+            "feedback": "Relevance of the report's executive summary to the original query.",
+            "threshold": 0.6
+          }
+        ],
+        "error": null
+      }
+    }
+  ]
+}

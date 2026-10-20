@@ -1,0 +1,769 @@
+{
+  "run_timestamp": "2026-10-19T14:44:12.176246+00:00",
+  "backend_url": "http://localhost:8000",
+  "judge_model": "gpt-4o",
+  "summary": {
+    "test_case_count": 5,
+    "passed": 0,
+    "failed": 5,
+    "pass_rate": 0.0,
+    "mean_latency_seconds": 48.29
+  },
+  "results": [
+    {
+      "test_case_id": "td_001",
+      "topic": "The impact of large language models on software engineering productivity",
+      "depth": "standard",
+      "pipeline_status": "completed",
+      "latency_seconds": 60.27,
+      "iterations": 0,
+      "overall_passed": false,
+      "structural": {
+        "overall_score": 0.9583333333333334,
+        "passed": true,
+        "metrics": [
+          {
+            "name": "report_completeness",
+            "score": 1.0,
+            "passed": true,
+            "details": "All completeness checks passed.",
+            "raw_values": {
+              "executive_summary_words": 137,
+              "section_count": 5,
+              "findings_count": 2,
+              "recommendations_count": 2,
+              "full_word_count": 461
+            }
+          },
+          {
+            "name": "schema_compliance",
+            "score": 1.0,
+            "passed": true,
+            "details": "All schema checks passed.",
+            "raw_values": {
+              "violation_count": 0,
+              "violations": []
+            }
+          },
+          {
+            "name": "source_coverage",
+            "score": 1.0,
+            "passed": true,
+            "details": "Source coverage is adequate.",
+            "raw_values": {
+              "retrieved_count": 15,
+              "cited_count": 2,
+              "unique_urls": 15,
+              "dedup_ratio": 1.0
+            }
+          },
+          {
+            "name": "critic_quality_gate",
+            "score": 0.75,
+            "passed": true,
+            "details": "Critic score 0.750 \u2265 threshold 0.65",
+            "raw_values": {
+              "critic_score": 0.75,
+              "threshold": 0.65
+            }
+          },
+          {
+            "name": "agent_step_coverage",
+            "score": 1.0,
+            "passed": true,
+            "details": "All 5 pipeline steps executed.",
+            "raw_values": {
+              "observed_steps": [
+                "planner",
+                "researcher",
+                "analyst",
+                "critic",
+                "writer"
+              ],
+              "missing_steps": []
+            }
+          },
+          {
+            "name": "iteration_efficiency",
+            "score": 1.0,
+            "passed": true,
+            "details": "Completed in 1 iteration(s) (max allowed: 3).",
+            "raw_values": {
+              "iterations": 1,
+              "max_iterations": 3
+            }
+          }
+        ]
+      },
+      "deepeval": {
+        "test_case_id": "td_001",
+        "topic": "The impact of large language models on software engineering productivity",
+        "overall_passed": true,
+        "metrics": [
+          {
+            "name": "KeywordCoverage",
+            "score": 0.375,
+            "passed": true,
+            "reason": "Found 3/8 expected keywords: ['code generation', 'productivity', 'LLM']",
+            "threshold": 0.35
+          },
+          {
+            "name": "AnswerRelevancyMetric",
+            "score": 1.0,
+            "passed": true,
+            "reason": "The score is 1.00 because the response perfectly aligns with the input, addressing the impact of large language models on software engineering productivity without any irrelevant statements. Great job!",
+            "threshold": 0.65
+          },
+          {
+            "name": "FaithfulnessMetric",
+            "score": 1.0,
+            "passed": true,
+            "reason": "The score is 1.00 because there are no contradictions between the actual output and the retrieval context. Everything aligns perfectly, showcasing a high level of accuracy and consistency. Keep up the great work!",
+            "threshold": 0.6
+          },
+          {
+            "name": "ContextualRelevancyMetric",
+            "score": 0.7468354430379747,
+            "passed": true,
+            "reason": "The score is 0.75 because while the retrieval context contains relevant statements about the transformative impact of Large Language Models (LLMs) on software engineering productivity, such as 'LLMs can significantly enhance productivity and automation in many SDLC phases' and 'Large Language Models have emerged as powerful allies in software development teams, driving tangible improvements in productivity,' there are numerous irrelevant statements that do not directly address the input topic, such as 'IBM Bob Icon' and 'Build with Bob at TechXchange 2026.' These irrelevant elements dilute the overall relevancy of the context.",
+            "threshold": 0.55
+          },
+          {
+            "name": "HallucinationMetric",
+            "score": 1.0,
+            "passed": true,
+            "reason": "The score is 1.00 because the actual output perfectly aligns with all provided contexts, with no contradictions present.",
+            "threshold": 0.4
+          },
+          {
+            "name": "GEval",
+            "score": 0.7580481334161661,
+            "passed": true,
+            "reason": "The introduction effectively outlines the research objectives by highlighting the transformative impact of LLMs on software engineering and provides a roadmap by mentioning the multifaceted impact and challenges. The logical progression of ideas is clear, with each section building on the previous one, such as moving from productivity enhancements to communication improvements and then to integration challenges. Transitions between sections are generally smooth, guiding the reader through the report. However, the conclusion lacks a clear summary of key findings and does not explicitly tie back to the research objectives, which slightly weakens the overall coherence.",
+            "threshold": 0.6
+          },
+          {
+            "name": "GEval",
+            "score": 0.8418696909355688,
+            "passed": true,
+            "reason": "The report provides analytical depth by identifying key insights such as the transformative impact of LLMs on productivity and the challenges of integration, aligning well with the first evaluation step. It highlights contradictions by discussing both the benefits and challenges, fulfilling the second step. The report offers actionable recommendations like investing in R&D and developing security protocols, which are derived from the insights, meeting the third step. However, the connection between analysis and conclusions could be more explicitly detailed, slightly affecting the logical progression required in the fourth step.",
+            "threshold": 0.55
+          }
+        ],
+        "error": null
+      },
+      "trulens": {
+        "test_case_id": "td_001",
+        "topic": "The impact of large language models on software engineering productivity",
+        "overall_passed": false,
+        "record_id": null,
+        "metrics": [],
+        "error": "(sqlite3.OperationalError) unable to open database file\n(Background on this error at: https://sqlalche.me/e/21/e3q8)"
+      }
+    },
+    {
+      "test_case_id": "td_002",
+      "topic": "Retrieval-Augmented Generation (RAG) architectures and their limitations",
+      "depth": "standard",
+      "pipeline_status": "completed",
+      "latency_seconds": 46.89,
+      "iterations": 0,
+      "overall_passed": false,
+      "structural": {
+        "overall_score": 0.9583333333333334,
+        "passed": true,
+        "metrics": [
+          {
+            "name": "report_completeness",
+            "score": 1.0,
+            "passed": true,
+            "details": "All completeness checks passed.",
+            "raw_values": {
+              "executive_summary_words": 143,
+              "section_count": 5,
+              "findings_count": 2,
+              "recommendations_count": 2,
+              "full_word_count": 524
+            }
+          },
+          {
+            "name": "schema_compliance",
+            "score": 1.0,
+            "passed": true,
+            "details": "All schema checks passed.",
+            "raw_values": {
+              "violation_count": 0,
+              "violations": []
+            }
+          },
+          {
+            "name": "source_coverage",
+            "score": 1.0,
+            "passed": true,
+            "details": "Source coverage is adequate.",
+            "raw_values": {
+              "retrieved_count": 15,
+              "cited_count": 2,
+              "unique_urls": 15,
+              "dedup_ratio": 1.0
+            }
+          },
+          {
+            "name": "critic_quality_gate",
+            "score": 0.75,
+            "passed": true,
+            "details": "Critic score 0.750 \u2265 threshold 0.65",
+            "raw_values": {
+              "critic_score": 0.75,
+              "threshold": 0.65
+            }
+          },
+          {
+            "name": "agent_step_coverage",
+            "score": 1.0,
+            "passed": true,
+            "details": "All 5 pipeline steps executed.",
+            "raw_values": {
+              "observed_steps": [
+                "planner",
+                "researcher",
+                "analyst",
+                "critic",
+                "writer"
+              ],
+              "missing_steps": []
+            }
+          },
+          {
+            "name": "iteration_efficiency",
+            "score": 1.0,
+            "passed": true,
+            "details": "Completed in 1 iteration(s) (max allowed: 3).",
+            "raw_values": {
+              "iterations": 1,
+              "max_iterations": 3
+            }
+          }
+        ]
+      },
+      "deepeval": {
+        "test_case_id": "td_002",
+        "topic": "Retrieval-Augmented Generation (RAG) architectures and their limitations",
+        "overall_passed": true,
+        "metrics": [
+          {
+            "name": "KeywordCoverage",
+            "score": 0.4,
+            "passed": true,
+            "reason": "Found 4/10 expected keywords: ['RAG', 'retrieval', 'hallucination', 'architecture']",
+            "threshold": 0.35
+          },
+          {
+            "name": "AnswerRelevancyMetric",
+            "score": 1.0,
+            "passed": true,
+            "reason": "The score is 1.00 because the output perfectly addresses the topic of Retrieval-Augmented Generation (RAG) architectures and their limitations without any irrelevant statements. Great job on staying focused and relevant!",
+            "threshold": 0.65
+          },
+          {
+            "name": "FaithfulnessMetric",
+            "score": 1.0,
+            "passed": true,
+            "reason": "The score is 1.00 because there are no contradictions between the actual output and the retrieval context. Everything aligns perfectly, showcasing a high level of accuracy and consistency. Keep up the great work!",
+            "threshold": 0.6
+          },
+          {
+            "name": "ContextualRelevancyMetric",
+            "score": 0.82,
+            "passed": true,
+            "reason": "The score is 0.82 because while the retrieval context provides a comprehensive overview of RAG's benefits and functionalities, it lacks direct focus on the limitations of RAG architectures. Statements like 'RAG helps with reducing hallucinations, providing up-to-date responses, and enables domain-specific knowledge without fine-tuning' highlight RAG's strengths but do not address its limitations. However, the context does mention some challenges, such as 'retrieval irrelevance, residual hallucination, latency and performance bottlenecks,' which partially align with the input's focus on limitations.",
+            "threshold": 0.55
+          },
+          {
+            "name": "HallucinationMetric",
+            "score": 0.4,
+            "passed": true,
+            "reason": "The score is 0.40 because while the actual output correctly aligns with the context by describing RAG's combination of retrieval and generation and its potential to reduce hallucination, it fails to mention critical components such as vector databases, chunking strategies, and advanced RAG variants, which are essential for a comprehensive understanding of the topic.",
+            "threshold": 0.4
+          },
+          {
+            "name": "GEval",
+            "score": 0.8705785027837012,
+            "passed": true,
+            "reason": "The introduction provides a clear thesis statement about the significance of RAG architectures, setting the stage effectively. The main body is well-organized, with each section logically following the previous one and contributing to the overall argument. Transitions between sections are smooth, maintaining a coherent flow of ideas. The conclusion effectively summarizes the main points and reinforces the thesis without introducing new information. However, the repetition of some points in the conclusion could be streamlined for clarity.",
+            "threshold": 0.6
+          },
+          {
+            "name": "GEval",
+            "score": 0.8238270968470982,
+            "passed": true,
+            "reason": "The report provides analytical depth by identifying key insights into the benefits and limitations of RAG architectures, such as retrieval irrelevance and residual hallucination. It highlights contradictions in the form of challenges faced by RAG systems, indicating a deeper level of analysis. The report offers actionable recommendations like improving retrieval algorithms and developing filtering mechanisms, directly derived from the identified challenges. However, the conclusions could be more explicitly connected to the insights and recommendations to reflect a comprehensive understanding.",
+            "threshold": 0.55
+          }
+        ],
+        "error": null
+      },
+      "trulens": {
+        "test_case_id": "td_002",
+        "topic": "Retrieval-Augmented Generation (RAG) architectures and their limitations",
+        "overall_passed": false,
+        "record_id": null,
+        "metrics": [],
+        "error": "(sqlite3.OperationalError) unable to open database file\n(Background on this error at: https://sqlalche.me/e/21/e3q8)"
+      }
+    },
+    {
+      "test_case_id": "td_003",
+      "topic": "Autonomous AI agents: current capabilities and safety concerns",
+      "depth": "standard",
+      "pipeline_status": "completed",
+      "latency_seconds": 46.05,
+      "iterations": 0,
+      "overall_passed": false,
+      "structural": {
+        "overall_score": 0.9583333333333334,
+        "passed": true,
+        "metrics": [
+          {
+            "name": "report_completeness",
+            "score": 1.0,
+            "passed": true,
+            "details": "All completeness checks passed.",
+            "raw_values": {
+              "executive_summary_words": 151,
+              "section_count": 5,
+              "findings_count": 2,
+              "recommendations_count": 2,
+              "full_word_count": 535
+            }
+          },
+          {
+            "name": "schema_compliance",
+            "score": 1.0,
+            "passed": true,
+            "details": "All schema checks passed.",
+            "raw_values": {
+              "violation_count": 0,
+              "violations": []
+            }
+          },
+          {
+            "name": "source_coverage",
+            "score": 1.0,
+            "passed": true,
+            "details": "Source coverage is adequate.",
+            "raw_values": {
+              "retrieved_count": 15,
+              "cited_count": 2,
+              "unique_urls": 15,
+              "dedup_ratio": 1.0
+            }
+          },
+          {
+            "name": "critic_quality_gate",
+            "score": 0.75,
+            "passed": true,
+            "details": "Critic score 0.750 \u2265 threshold 0.65",
+            "raw_values": {
+              "critic_score": 0.75,
+              "threshold": 0.65
+            }
+          },
+          {
+            "name": "agent_step_coverage",
+            "score": 1.0,
+            "passed": true,
+            "details": "All 5 pipeline steps executed.",
+            "raw_values": {
+              "observed_steps": [
+                "planner",
+                "researcher",
+                "analyst",
+                "critic",
+                "writer"
+              ],
+              "missing_steps": []
+            }
+          },
+          {
+            "name": "iteration_efficiency",
+            "score": 1.0,
+            "passed": true,
+            "details": "Completed in 1 iteration(s) (max allowed: 3).",
+            "raw_values": {
+              "iterations": 1,
+              "max_iterations": 3
+            }
+          }
+        ]
+      },
+      "deepeval": {
+        "test_case_id": "td_003",
+        "topic": "Autonomous AI agents: current capabilities and safety concerns",
+        "overall_passed": false,
+        "metrics": [
+          {
+            "name": "KeywordCoverage",
+            "score": 0.4,
+            "passed": true,
+            "reason": "Found 4/10 expected keywords: ['autonomous agents', 'safety', 'capabilities', 'concerns']",
+            "threshold": 0.35
+          },
+          {
+            "name": "AnswerRelevancyMetric",
+            "score": 1.0,
+            "passed": true,
+            "reason": "The score is 1.00 because the response perfectly addressed the topic of autonomous AI agents, focusing on both their current capabilities and safety concerns without any irrelevant information. Great job!",
+            "threshold": 0.65
+          },
+          {
+            "name": "FaithfulnessMetric",
+            "score": 1.0,
+            "passed": true,
+            "reason": "The score is 1.00 because there are no contradictions between the actual output and the retrieval context. Everything aligns perfectly, showcasing a high level of accuracy and consistency. Keep up the great work!",
+            "threshold": 0.6
+          },
+          {
+            "name": "ContextualRelevancyMetric",
+            "score": 0.9347826086956522,
+            "passed": true,
+            "reason": "The score is 0.93 because the retrieval context contains numerous relevant statements about the capabilities and safety concerns of autonomous AI agents, such as 'Autonomous AI applications automate decision-making and operational tasks without human intervention' and 'Safety in autonomous systems refers to their ability to proactively detect hazardous conditions.' However, some statements, like 'Assess your data landscape. Identify integration needs and quality issues,' are more focused on data management rather than directly addressing AI capabilities or safety concerns.",
+            "threshold": 0.55
+          },
+          {
+            "name": "HallucinationMetric",
+            "score": 0.2,
+            "passed": false,
+            "reason": "The score is 0.20 because while the actual output aligns with the context on safety concerns, it fails to address several key points such as the use of LLMs, specific frameworks like LangChain, and the ReAct prompting pattern, leading to a low alignment with the provided context.",
+            "threshold": 0.4
+          },
+          {
+            "name": "GEval",
+            "score": 0.7705732514737755,
+            "passed": true,
+            "reason": "The introduction effectively outlines the research objectives by highlighting the capabilities and safety concerns of autonomous AI agents, providing a clear roadmap for the report. The logical progression of ideas is mostly coherent, with each section building on the previous one, though the transition between sections could be smoother. The conclusion summarizes key findings and ties back to the research objectives, emphasizing the need for safety protocols and regulatory frameworks. However, the transitions between sections could be more explicit to enhance reader guidance.",
+            "threshold": 0.6
+          },
+          {
+            "name": "GEval",
+            "score": 0.8130500084122693,
+            "passed": true,
+            "reason": "The report provides analytical depth by discussing the capabilities and safety concerns of autonomous AI agents, highlighting the need for regulatory frameworks and ethical considerations. It identifies key insights such as the balance between performance and safety, and the necessity for comprehensive safety protocols. However, it lacks explicit contradictions or inconsistencies in the data, which could have demonstrated a deeper understanding. The report offers actionable recommendations supported by the analysis, such as developing safety standards and regulatory frameworks, and synthesizes information from various sources to present a comprehensive perspective.",
+            "threshold": 0.55
+          }
+        ],
+        "error": null
+      },
+      "trulens": {
+        "test_case_id": "td_003",
+        "topic": "Autonomous AI agents: current capabilities and safety concerns",
+        "overall_passed": false,
+        "record_id": null,
+        "metrics": [],
+        "error": "(sqlite3.OperationalError) unable to open database file\n(Background on this error at: https://sqlalche.me/e/21/e3q8)"
+      }
+    },
+    {
+      "test_case_id": "td_004",
+      "topic": "Vector databases comparison: Qdrant vs Pinecone vs Weaviate",
+      "depth": "quick",
+      "pipeline_status": "completed",
+      "latency_seconds": 41.33,
+      "iterations": 0,
+      "overall_passed": false,
+      "structural": {
+        "overall_score": 0.9583333333333334,
+        "passed": true,
+        "metrics": [
+          {
+            "name": "report_completeness",
+            "score": 1.0,
+            "passed": true,
+            "details": "All completeness checks passed.",
+            "raw_values": {
+              "executive_summary_words": 149,
+              "section_count": 5,
+              "findings_count": 3,
+              "recommendations_count": 3,
+              "full_word_count": 568
+            }
+          },
+          {
+            "name": "schema_compliance",
+            "score": 1.0,
+            "passed": true,
+            "details": "All schema checks passed.",
+            "raw_values": {
+              "violation_count": 0,
+              "violations": []
+            }
+          },
+          {
+            "name": "source_coverage",
+            "score": 1.0,
+            "passed": true,
+            "details": "Source coverage is adequate.",
+            "raw_values": {
+              "retrieved_count": 8,
+              "cited_count": 2,
+              "unique_urls": 8,
+              "dedup_ratio": 1.0
+            }
+          },
+          {
+            "name": "critic_quality_gate",
+            "score": 0.75,
+            "passed": true,
+            "details": "Critic score 0.750 \u2265 threshold 0.65",
+            "raw_values": {
+              "critic_score": 0.75,
+              "threshold": 0.65
+            }
+          },
+          {
+            "name": "agent_step_coverage",
+            "score": 1.0,
+            "passed": true,
+            "details": "All 5 pipeline steps executed.",
+            "raw_values": {
+              "observed_steps": [
+                "planner",
+                "researcher",
+                "analyst",
+                "critic",
+                "writer"
+              ],
+              "missing_steps": []
+            }
+          },
+          {
+            "name": "iteration_efficiency",
+            "score": 1.0,
+            "passed": true,
+            "details": "Completed in 1 iteration(s) (max allowed: 3).",
+            "raw_values": {
+              "iterations": 1,
+              "max_iterations": 3
+            }
+          }
+        ]
+      },
+      "deepeval": {
+        "test_case_id": "td_004",
+        "topic": "Vector databases comparison: Qdrant vs Pinecone vs Weaviate",
+        "overall_passed": true,
+        "metrics": [
+          {
+            "name": "KeywordCoverage",
+            "score": 0.4,
+            "passed": true,
+            "reason": "Found 4/10 expected keywords: ['Qdrant', 'Pinecone', 'Weaviate', 'self-hosted']",
+            "threshold": 0.25
+          },
+          {
+            "name": "AnswerRelevancyMetric",
+            "score": 1.0,
+            "passed": true,
+            "reason": "The score is 1.00 because the output perfectly addresses the input by focusing solely on comparing Qdrant, Pinecone, and Weaviate without any irrelevant information. Great job on staying on topic!",
+            "threshold": 0.65
+          },
+          {
+            "name": "FaithfulnessMetric",
+            "score": 0.9629629629629629,
+            "passed": true,
+            "reason": "The score is 0.96 because the actual output slightly misrepresents the latency and QPS figures from the retrieval context, stating 8ms p95 with 850 QPS instead of the correct 30-40ms p99 latency with 8,000-15,000 QPS. This minor discrepancy slightly affects the faithfulness of the output.",
+            "threshold": 0.6
+          },
+          {
+            "name": "ContextualRelevancyMetric",
+            "score": 0.8636363636363636,
+            "passed": true,
+            "reason": "The score is 0.86 because while the retrieval context contains detailed comparisons of Qdrant, Pinecone, and Weaviate, such as 'Pinecone offers project-scoped API keys' and 'Qdrant provides first-class multitenancy,' many statements are irrelevant, like 'Most benchmark comparisons test unrealistic scenarios,' which do not directly address the database comparison.",
+            "threshold": 0.55
+          },
+          {
+            "name": "HallucinationMetric",
+            "score": 0.8,
+            "passed": true,
+            "reason": "The score is 0.80 because the actual output aligns well with the context in several key areas, such as cost-effectiveness, throughput, and deployment models of vector databases. However, it misses mentioning specific algorithms like HNSW for fast retrieval, which slightly detracts from full alignment.",
+            "threshold": 0.4
+          },
+          {
+            "name": "GEval",
+            "score": 0.8761601917218688,
+            "passed": true,
+            "reason": "The introduction clearly outlines the research objectives by stating the focus on comparing three vector databases and provides a roadmap by mentioning the unique features and capabilities of each. The logical progression of ideas is strong, with each section building upon the previous one, detailing the features and strengths of Pinecone, Qdrant, and Weaviate. Transitions between sections are effective, guiding the reader smoothly through the report. The conclusion effectively summarizes the key findings and ties back to the research objectives by reiterating the optimal use cases for each database. However, a slight improvement could be made by explicitly linking the conclusion back to the introduction's objectives.",
+            "threshold": 0.6
+          },
+          {
+            "name": "GEval",
+            "score": 0.8455186134670856,
+            "passed": true,
+            "reason": "The report provides analytical depth by identifying key insights into the unique features and optimal use cases of Qdrant, Pinecone, and Weaviate, going beyond basic summaries. It highlights the strengths and weaknesses of each database, offering a nuanced comparison. While it does not explicitly mention contradictions, it provides actionable recommendations directly derived from the insights, such as choosing Pinecone for rapid scaling and Weaviate for semantic search needs. The conclusions are logically connected to the analysis, demonstrating a comprehensive understanding of the vector databases.",
+            "threshold": 0.55
+          }
+        ],
+        "error": null
+      },
+      "trulens": {
+        "test_case_id": "td_004",
+        "topic": "Vector databases comparison: Qdrant vs Pinecone vs Weaviate",
+        "overall_passed": false,
+        "record_id": null,
+        "metrics": [],
+        "error": "(sqlite3.OperationalError) unable to open database file\n(Background on this error at: https://sqlalche.me/e/21/e3q8)"
+      }
+    },
+    {
+      "test_case_id": "td_005",
+      "topic": "Prompt engineering best practices for instruction-following LLMs",
+      "depth": "standard",
+      "pipeline_status": "completed",
+      "latency_seconds": 46.91,
+      "iterations": 0,
+      "overall_passed": false,
+      "structural": {
+        "overall_score": 0.9583333333333334,
+        "passed": true,
+        "metrics": [
+          {
+            "name": "report_completeness",
+            "score": 1.0,
+            "passed": true,
+            "details": "All completeness checks passed.",
+            "raw_values": {
+              "executive_summary_words": 130,
+              "section_count": 5,
+              "findings_count": 2,
+              "recommendations_count": 2,
+              "full_word_count": 392
+            }
+          },
+          {
+            "name": "schema_compliance",
+            "score": 1.0,
+            "passed": true,
+            "details": "All schema checks passed.",
+            "raw_values": {
+              "violation_count": 0,
+              "violations": []
+            }
+          },
+          {
+            "name": "source_coverage",
+            "score": 1.0,
+            "passed": true,
+            "details": "Source coverage is adequate.",
+            "raw_values": {
+              "retrieved_count": 15,
+              "cited_count": 2,
+              "unique_urls": 15,
+              "dedup_ratio": 1.0
+            }
+          },
+          {
+            "name": "critic_quality_gate",
+            "score": 0.75,
+            "passed": true,
+            "details": "Critic score 0.750 \u2265 threshold 0.65",
+            "raw_values": {
+              "critic_score": 0.75,
+              "threshold": 0.65
+            }
+          },
+          {
+            "name": "agent_step_coverage",
+            "score": 1.0,
+            "passed": true,
+            "details": "All 5 pipeline steps executed.",
+            "raw_values": {
+              "observed_steps": [
+                "planner",
+                "researcher",
+                "analyst",
+                "critic",
+                "writer"
+              ],
+              "missing_steps": []
+            }
+          },
+          {
+            "name": "iteration_efficiency",
+            "score": 1.0,
+            "passed": true,
+            "details": "Completed in 1 iteration(s) (max allowed: 3).",
+            "raw_values": {
+              "iterations": 1,
+              "max_iterations": 3
+            }
+          }
+        ]
+      },
+      "deepeval": {
+        "test_case_id": "td_005",
+        "topic": "Prompt engineering best practices for instruction-following LLMs",
+        "overall_passed": true,
+        "metrics": [
+          {
+            "name": "KeywordCoverage",
+            "score": 0.5556,
+            "passed": true,
+            "reason": "Found 5/9 expected keywords: ['prompt engineering', 'chain-of-thought', 'few-shot', 'zero-shot', 'instructions']",
+            "threshold": 0.35
+          },
+          {
+            "name": "AnswerRelevancyMetric",
+            "score": 1.0,
+            "passed": true,
+            "reason": "The score is 1.00 because the output perfectly aligns with the input, providing relevant and focused information on prompt engineering best practices for instruction-following LLMs. Great job!",
+            "threshold": 0.65
+          },
+          {
+            "name": "FaithfulnessMetric",
+            "score": 1.0,
+            "passed": true,
+            "reason": "The score is 1.00 because there are no contradictions between the actual output and the retrieval context. Everything aligns perfectly, showcasing a high level of accuracy and consistency. Keep up the great work!",
+            "threshold": 0.6
+          },
+          {
+            "name": "ContextualRelevancyMetric",
+            "score": 0.7916666666666666,
+            "passed": true,
+            "reason": "The score is 0.79 because while there are several relevant statements about prompt engineering best practices, such as 'Effective prompt engineering starts with clarity and precision' and 'Master prompt engineering to improve LLM outputs,' a significant portion of the context is irrelevant, discussing unrelated topics like promotional offers and general framework definitions.",
+            "threshold": 0.55
+          },
+          {
+            "name": "HallucinationMetric",
+            "score": 0.4,
+            "passed": true,
+            "reason": "The score is 0.40 because while the actual output aligns with the context on techniques like Chain of Thought and few-shot prompting, it fails to address key points such as system prompts, temperature control, and prompt injection, which are crucial for a comprehensive understanding of LLM behavior.",
+            "threshold": 0.4
+          },
+          {
+            "name": "GEval",
+            "score": 0.7308081814015941,
+            "passed": true,
+            "reason": "The introduction outlines the research question and objectives by emphasizing the importance of clarity and precision in prompt engineering. The main body is well-organized, with sections logically following each other, covering techniques, applications, challenges, and future directions. Transitions between sections are generally smooth, though could be more explicit. The conclusion summarizes key findings but lacks a direct tie back to the research question and objectives.",
+            "threshold": 0.6
+          },
+          {
+            "name": "GEval",
+            "score": 0.7409506762751845,
+            "passed": true,
+            "reason": "The report provides analytical depth by discussing various prompt engineering techniques like Chain of Thought and zero-shot prompting, and their applications in education and business. It highlights challenges such as ambiguity and contextual misinterpretation, showing a deeper understanding. The report offers actionable recommendations, such as adopting clear prompt structures, supported by analysis. However, it lacks synthesis from multiple sources, which could have provided a more comprehensive perspective.",
+            "threshold": 0.55
+          }
+        ],
+        "error": null
+      },
+      "trulens": {
+        "test_case_id": "td_005",
+        "topic": "Prompt engineering best practices for instruction-following LLMs",
+        "overall_passed": false,
+        "record_id": null,
+        "metrics": [],
+        "error": "(sqlite3.OperationalError) unable to open database file\n(Background on this error at: https://sqlalche.me/e/21/e3q8)"
+      }
+    }
+  ]
+}

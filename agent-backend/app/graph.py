@@ -5,7 +5,7 @@ Defines the shared state and wires the 5 agents together in a pipeline.
 
 from typing import Any, Optional
 from typing_extensions import TypedDict
-from langgraph.graph import StateGraph, END
+from langgraph.graph import StateGraph, START, END
 
 from app.config import get_logger
 
@@ -74,7 +74,7 @@ def create_workflow():
     graph.add_node("critic", run_critic)
 
     # Connect them in order: planner → researcher → analyst → writer → critic
-    graph.set_entry_point("planner")
+    graph.add_edge(START, "planner")
     graph.add_edge("planner", "researcher")
     graph.add_edge("researcher", "analyst")
     graph.add_edge("analyst", "writer")

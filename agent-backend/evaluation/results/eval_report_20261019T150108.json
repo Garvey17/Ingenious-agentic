@@ -1,0 +1,187 @@
+{
+  "run_timestamp": "2026-10-19T15:01:08.816738+00:00",
+  "backend_url": "http://localhost:8000",
+  "judge_model": "gpt-4o",
+  "summary": {
+    "test_case_count": 1,
+    "passed": 1,
+    "failed": 0,
+    "pass_rate": 1.0,
+    "mean_latency_seconds": 76.33
+  },
+  "results": [
+    {
+      "test_case_id": "td_004",
+      "topic": "Vector databases comparison: Qdrant vs Pinecone vs Weaviate",
+      "depth": "quick",
+      "pipeline_status": "completed",
+      "latency_seconds": 76.33,
+      "iterations": 2,
+      "overall_passed": true,
+      "structural": {
+        "overall_score": 0.85555,
+        "passed": true,
+        "metrics": [
+          {
+            "name": "report_completeness",
+            "score": 1.0,
+            "passed": true,
+            "details": "All completeness checks passed.",
+            "raw_values": {
+              "executive_summary_words": 150,
+              "section_count": 6,
+              "findings_count": 3,
+              "recommendations_count": 3,
+              "full_word_count": 573
+            }
+          },
+          {
+            "name": "schema_compliance",
+            "score": 1.0,
+            "passed": true,
+            "details": "All schema checks passed.",
+            "raw_values": {
+              "violation_count": 0,
+              "violations": []
+            }
+          },
+          {
+            "name": "source_coverage",
+            "score": 1.0,
+            "passed": true,
+            "details": "Source coverage is adequate.",
+            "raw_values": {
+              "retrieved_count": 6,
+              "cited_count": 6,
+              "unique_urls": 6,
+              "dedup_ratio": 1.0
+            }
+          },
+          {
+            "name": "critic_quality_gate",
+            "score": 0.8,
+            "passed": true,
+            "details": "Critic score 0.800 \u2265 threshold 0.65",
+            "raw_values": {
+              "critic_score": 0.8,
+              "threshold": 0.65
+            }
+          },
+          {
+            "name": "agent_step_coverage",
+            "score": 1.0,
+            "passed": true,
+            "details": "All 5 pipeline steps executed.",
+            "raw_values": {
+              "observed_steps": [
+                "planner",
+                "analyst",
+                "writer",
+                "researcher",
+                "critic"
+              ],
+              "missing_steps": []
+            }
+          },
+          {
+            "name": "iteration_efficiency",
+            "score": 0.3333,
+            "passed": true,
+            "details": "Completed in 3 iteration(s) (max allowed: 3).",
+            "raw_values": {
+              "iterations": 3,
+              "max_iterations": 3
+            }
+          }
+        ]
+      },
+      "deepeval": {
+        "test_case_id": "td_004",
+        "topic": "Vector databases comparison: Qdrant vs Pinecone vs Weaviate",
+        "overall_passed": true,
+        "metrics": [
+          {
+            "name": "KeywordCoverage",
+            "score": 0.3,
+            "passed": true,
+            "reason": "Found 3/10 expected keywords: ['Qdrant', 'Pinecone', 'Weaviate']",
+            "threshold": 0.25
+          },
+          {
+            "name": "AnswerRelevancyMetric",
+            "score": 0.9655172413793104,
+            "passed": true,
+            "reason": "The score is 0.97 because the output is highly relevant to the input, effectively comparing Qdrant, Pinecone, and Weaviate. The only minor issue is a specific mention of TripAdvisor, which slightly detracts from the direct comparison focus. Overall, great job on maintaining relevance!",
+            "threshold": 0.65
+          },
+          {
+            "name": "FaithfulnessMetric",
+            "score": 0.9523809523809523,
+            "passed": true,
+            "reason": "The score is 0.95 because the actual output accurately reflects the scale of TripAdvisor's operations with over a billion multimodal vectors across 11 million businesses. However, it incorrectly specifies the use of Qdrant, which is not mentioned in the retrieval context.",
+            "threshold": 0.6
+          },
+          {
+            "name": "ContextualRelevancyMetric",
+            "score": 0.8333333333333334,
+            "passed": true,
+            "reason": "The score is 0.83 because while the retrieval context includes relevant details about the performance, configuration, and features of Qdrant, Pinecone, and Weaviate, many statements are general or procedural and do not directly compare these databases. For instance, the statement 'Performance can vary significantly based on configuration, dataset size, and query patterns' is relevant, but 'Step 1: Export your source embeddings and metadata' is not directly related to the comparison of the databases.",
+            "threshold": 0.55
+          },
+          {
+            "name": "HallucinationMetric",
+            "score": 1.0,
+            "passed": true,
+            "reason": "The score is 1.00 because the actual output perfectly aligns with the context, consistently highlighting the strengths and features of Qdrant, Pinecone, and Weaviate without any contradictions.",
+            "threshold": 0.5
+          },
+          {
+            "name": "GEval",
+            "score": 0.8798106543157524,
+            "passed": true,
+            "reason": "The introduction clearly outlines the research objectives by stating the report's focus on comparing Qdrant, Pinecone, and Weaviate, and provides a roadmap by mentioning features, performance, and suitability for use cases. The logical progression of ideas is strong, with each section building on the previous one, detailing each database's strengths and use cases. Transitions between sections are effective, guiding the reader smoothly through the report. The conclusion effectively summarizes key findings and ties back to the research objectives by reiterating the unique strengths of each database and advising on selection criteria based on organizational needs. However, the conclusion could slightly improve by more explicitly linking back to the specific objectives stated in the introduction.",
+            "threshold": 0.6
+          },
+          {
+            "name": "GEval",
+            "score": 0.8510566511995356,
+            "passed": true,
+            "reason": "The report provides analytical depth by identifying key insights into the strengths of Qdrant, Pinecone, and Weaviate, beyond basic summaries. It highlights the unique advantages of each database, such as Qdrant's cost efficiency, Pinecone's managed infrastructure, and Weaviate's open-source flexibility. The report does not explicitly mention contradictions or inconsistencies in the data, which is a minor shortcoming. However, it offers actionable recommendations tailored to organizational needs, supported by the analysis. The report synthesizes information from various sources, presenting a comprehensive view of the vector databases.",
+            "threshold": 0.55
+          }
+        ],
+        "error": null
+      },
+      "trulens": {
+        "test_case_id": "td_004",
+        "topic": "Vector databases comparison: Qdrant vs Pinecone vs Weaviate",
+        "overall_passed": true,
+        "record_id": null,
+        "metrics": [
+          {
+            "name": "ContextRelevance",
+            "score": 0.9333,
+            "passed": true,
+            "feedback": "Mean relevance across 5 chunks.",
+            "threshold": 0.5
+          },
+          {
+            "name": "Groundedness",
+            "score": 0.8333,
+            "passed": true,
+            "feedback": "{'reasons': [{'criteria': 'In the rapidly evolving landscape of vector databases, Qdrant, Pinecone, and Weaviate have emerged as leading solutions, each offering distinct advantages tailored to varied organizational needs.', 'supporting_evidence': 'Criteria: In the rapidly evolving landscape of vector databases, Qdrant, Pinecone, and Weaviate have emerged as leading solutions, each offering distinct advantages tailored to varied organizational needs.\\nSupporting Evidence: Qdrant delivers raw performance for high-throughput applications and the lowest cost-per-query at scale, in exchange for owning the operations. Pinecone handles production workloads with zero infrastructure management and ships compliance certifications out of the box. Weaviate offers flexibility for teams wanting open-source with enterprise features and native multi-modal search.', 'score': 1.0}, {'criteria': 'Qdrant is recognized for its exceptional performance in high-throughput applications, providing the lowest cost-per-query at scale.', 'supporting_evidence': 'Criteria: Qdrant is recognized for its exceptional performance in high-throughput applications, providing the lowest cost-per-query at scale.\\nSupporting Evidence: Qdrant delivers raw performance for high-throughput applications and the lowest cost-per-query at scale, in exchange for owning the operations.', 'score': 1.0}, {'criteria': 'This makes it particularly appealing for large deployments, such as TripAdvisor, which manages over a billion multimodal vectors using Qdrant.', 'supporting_evidence': 'Criteria: This makes it particularly appealing for large deployments, such as TripAdvisor, which manages over a billion multimodal vectors using Qdrant.\\nSupporting Evidence: NOTHING FOUND', 'score': 0.0}, {'criteria': 'Pinecone, on the other hand, stands out for its managed infrastructure and robust compliance features, making it the preferred choice for teams that require production-ready workloads without the hassle of infrastructure management.', 'supporting_evidence': 'Criteria: Pinecone, on the other hand, stands out for its managed infrastructure and robust compliance features, making it the preferred choice for teams that require production-ready workloads without the hassle of infrastructure management.\\nSupporting Evidence: Pinecone handles production workloads with zero infrastructure management and ships compliance certifications out of the box.', 'score': 1.0}, {'criteria': 'Lastly, Weaviate offers a unique proposition with its open-source flexibility, supporting teams that require enterprise features coupled with native multi-modal search capabilities.', 'supporting_evidence': 'Criteria: Lastly, Weaviate offers a unique proposition with its open-source flexibility, supporting teams that require enterprise features coupled with native multi-modal search capabilities.\\nSupporting Evidence: Weaviate offers flexibility for teams wanting open-source with enterprise features and native multi-modal search.', 'score': 1.0}, {'criteria': 'The decision of which vector database to adopt should be guided by specific organizational requirements such as cost, operational management, and the need for isolation and compliance features.', 'supporting_evidence': 'Criteria: The decision of which vector database to adopt should be guided by specific organizational requirements such as cost, operational management, and the need for isolation and compliance features.\\nSupporting Evidence: Organisations with global business units should compare each platform\u2019s isolation depth, operational tooling, and total cost before deciding.', 'score': 1.0}]}",
+            "threshold": 0.55
+          },
+          {
+            "name": "AnswerRelevance",
+            "score": 1.0,
+            "passed": true,
+            "feedback": "Relevance of the report's executive summary to the original query.",
+            "threshold": 0.6
+          }
+        ],
+        "error": null
+      }
+    }
+  ]
+}

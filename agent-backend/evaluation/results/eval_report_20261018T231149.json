@@ -1,0 +1,239 @@
+{
+  "run_timestamp": "2026-10-18T23:11:49.862772+00:00",
+  "backend_url": "http://localhost:8000",
+  "judge_model": "gpt-4o",
+  "summary": {
+    "test_case_count": 5,
+    "passed": 0,
+    "failed": 5,
+    "pass_rate": 0.0,
+    "mean_latency_seconds": 8.18
+  },
+  "results": [
+    {
+      "test_case_id": "td_001",
+      "topic": "The impact of large language models on software engineering productivity",
+      "depth": "standard",
+      "pipeline_status": "failed",
+      "latency_seconds": 12.95,
+      "iterations": 0,
+      "overall_passed": false,
+      "structural": {
+        "overall_score": 0.0,
+        "passed": false,
+        "metrics": [
+          {
+            "name": "pipeline_execution",
+            "score": 0.0,
+            "passed": false,
+            "details": "Pipeline did not complete successfully: status=failed, error=Analyst failed: RetryError[<Future at 0x1f7b3d1bb00 state=finished raised AuthenticationError>]",
+            "raw_values": {}
+          }
+        ]
+      },
+      "deepeval": {
+        "test_case_id": "td_001",
+        "topic": "The impact of large language models on software engineering productivity",
+        "overall_passed": false,
+        "metrics": [
+          {
+            "name": "KeywordCoverage",
+            "score": 0.0,
+            "passed": false,
+            "reason": "Found 0/8 expected keywords: []",
+            "threshold": 0.6
+          }
+        ],
+        "error": "Pipeline failed: status=failed"
+      },
+      "trulens": {
+        "test_case_id": "td_001",
+        "topic": "The impact of large language models on software engineering productivity",
+        "overall_passed": false,
+        "record_id": null,
+        "metrics": [],
+        "error": "TruLens not installed \u2014 skipping RAG Triad metrics."
+      }
+    },
+    {
+      "test_case_id": "td_002",
+      "topic": "Retrieval-Augmented Generation (RAG) architectures and their limitations",
+      "depth": "standard",
+      "pipeline_status": "failed",
+      "latency_seconds": 6.94,
+      "iterations": 0,
+      "overall_passed": false,
+      "structural": {
+        "overall_score": 0.0,
+        "passed": false,
+        "metrics": [
+          {
+            "name": "pipeline_execution",
+            "score": 0.0,
+            "passed": false,
+            "details": "Pipeline did not complete successfully: status=failed, error=Planner failed: RetryError[<Future at 0x1f7b3d3f290 state=finished raised AuthenticationError>]",
+            "raw_values": {}
+          }
+        ]
+      },
+      "deepeval": {
+        "test_case_id": "td_002",
+        "topic": "Retrieval-Augmented Generation (RAG) architectures and their limitations",
+        "overall_passed": false,
+        "metrics": [
+          {
+            "name": "KeywordCoverage",
+            "score": 0.0,
+            "passed": false,
+            "reason": "Found 0/9 expected keywords: []",
+            "threshold": 0.6
+          }
+        ],
+        "error": "Pipeline failed: status=failed"
+      },
+      "trulens": {
+        "test_case_id": "td_002",
+        "topic": "Retrieval-Augmented Generation (RAG) architectures and their limitations",
+        "overall_passed": false,
+        "record_id": null,
+        "metrics": [],
+        "error": "TruLens not installed \u2014 skipping RAG Triad metrics."
+      }
+    },
+    {
+      "test_case_id": "td_003",
+      "topic": "Autonomous AI agents: current capabilities and safety concerns",
+      "depth": "standard",
+      "pipeline_status": "failed",
+      "latency_seconds": 7.17,
+      "iterations": 0,
+      "overall_passed": false,
+      "structural": {
+        "overall_score": 0.0,
+        "passed": false,
+        "metrics": [
+          {
+            "name": "pipeline_execution",
+            "score": 0.0,
+            "passed": false,
+            "details": "Pipeline did not complete successfully: status=failed, error=Planner failed: RetryError[<Future at 0x1f7b3d57b90 state=finished raised AuthenticationError>]",
+            "raw_values": {}
+          }
+        ]
+      },
+      "deepeval": {
+        "test_case_id": "td_003",
+        "topic": "Autonomous AI agents: current capabilities and safety concerns",
+        "overall_passed": false,
+        "metrics": [
+          {
+            "name": "KeywordCoverage",
+            "score": 0.0,
+            "passed": false,
+            "reason": "Found 0/9 expected keywords: []",
+            "threshold": 0.6
+          }
+        ],
+        "error": "Pipeline failed: status=failed"
+      },
+      "trulens": {
+        "test_case_id": "td_003",
+        "topic": "Autonomous AI agents: current capabilities and safety concerns",
+        "overall_passed": false,
+        "record_id": null,
+        "metrics": [],
+        "error": "TruLens not installed \u2014 skipping RAG Triad metrics."
+      }
+    },
+    {
+      "test_case_id": "td_004",
+      "topic": "Vector databases comparison: Qdrant vs Pinecone vs Weaviate",
+      "depth": "quick",
+      "pipeline_status": "failed",
+      "latency_seconds": 6.95,
+      "iterations": 0,
+      "overall_passed": false,
+      "structural": {
+        "overall_score": 0.0,
+        "passed": false,
+        "metrics": [
+          {
+            "name": "pipeline_execution",
+            "score": 0.0,
+            "passed": false,
+            "details": "Pipeline did not complete successfully: status=failed, error=Planner failed: RetryError[<Future at 0x1f7b3d3da00 state=finished raised AuthenticationError>]",
+            "raw_values": {}
+          }
+        ]
+      },
+      "deepeval": {
+        "test_case_id": "td_004",
+        "topic": "Vector databases comparison: Qdrant vs Pinecone vs Weaviate",
+        "overall_passed": false,
+        "metrics": [
+          {
+            "name": "KeywordCoverage",
+            "score": 0.0,
+            "passed": false,
+            "reason": "Found 0/10 expected keywords: []",
+            "threshold": 0.6
+          }
+        ],
+        "error": "Pipeline failed: status=failed"
+      },
+      "trulens": {
+        "test_case_id": "td_004",
+        "topic": "Vector databases comparison: Qdrant vs Pinecone vs Weaviate",
+        "overall_passed": false,
+        "record_id": null,
+        "metrics": [],
+        "error": "TruLens not installed \u2014 skipping RAG Triad metrics."
+      }
+    },
+    {
+      "test_case_id": "td_005",
+      "topic": "Prompt engineering best practices for instruction-following LLMs",
+      "depth": "standard",
+      "pipeline_status": "failed",
+      "latency_seconds": 6.91,
+      "iterations": 0,
+      "overall_passed": false,
+      "structural": {
+        "overall_score": 0.0,
+        "passed": false,
+        "metrics": [
+          {
+            "name": "pipeline_execution",
+            "score": 0.0,
+            "passed": false,
+            "details": "Pipeline did not complete successfully: status=failed, error=Planner failed: RetryError[<Future at 0x1f7b3c6e840 state=finished raised AuthenticationError>]",
+            "raw_values": {}
+          }
+        ]
+      },
+      "deepeval": {
+        "test_case_id": "td_005",
+        "topic": "Prompt engineering best practices for instruction-following LLMs",
+        "overall_passed": false,
+        "metrics": [
+          {
+            "name": "KeywordCoverage",
+            "score": 0.0,
+            "passed": false,
+            "reason": "Found 0/8 expected keywords: []",
+            "threshold": 0.6
+          }
+        ],
+        "error": "Pipeline failed: status=failed"
+      },
+      "trulens": {
+        "test_case_id": "td_005",
+        "topic": "Prompt engineering best practices for instruction-following LLMs",
+        "overall_passed": false,
+        "record_id": null,
+        "metrics": [],
+        "error": "TruLens not installed \u2014 skipping RAG Triad metrics."
+      }
+    }
+  ]
+}
