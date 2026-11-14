@@ -2,12 +2,93 @@
 Web Search and Summarize tools used by the Researcher agent.
 """
 
+from datetime import datetime
 from typing import List
+
+import httpx
+from bs4 import BeautifulSoup
 
 from app.config import settings, get_logger
 from app.models import get_llm
 
 logger = get_logger(__name__)
+
+
+async def wayback_lookup(url: str, date: str) -> dict:
+    """Use for questions about what a web page said on a past date."""
+    result = {
+        "found": False,
+        "snapshot_url": "",
+        "snapshot_timestamp": "",
+        "top_stories": [],
+        "message": "",
+    }
+    headers = {"User-Agent": "IngeniousAgentic/1.0 (Wayback snapshot lookup)"}
+    logger.info(f"[wayback_lookup] url='{url}' requested_date={date}")
+
+    try:
+        async with httpx.AsyncClient(timeout=20.0, headers=headers) as client:
+            response = await client.get(
+                "https://archive.org/wayback/available",
+                params={"url": url, "timestamp": date},
+            )
+            response.raise_for_status()
+            snapshot = response.json().get("archived_snapshots", {}).get("closest")
+
+            if not snapshot or not snapshot.get("available"):
+                result["message"] = f"No Wayback Machine snapshot found for {url} near {date}."
+                return result
+
+            result["snapshot_url"] = snapshot.get("url", "")
+            result["snapshot_timestamp"] = snapshot.get("timestamp", "")
+
+            requested_day = datetime.strptime(date, "%Y%m%d").date()
+            snapshot_day = datetime.strptime(
+                result["snapshot_timestamp"][:8], "%Y%m%d"
+            ).date()
+            if abs((snapshot_day - requested_day).days) > 1:
+                result["message"] = (
+                    f"No snapshot found near {date}; the closest capture is "
+                    f"{result['snapshot_timestamp']}."
+                )
+                return result
+
+            result["found"] = True
+
+            # Use id_ replay to avoid injecting the Wayback toolbar into the page.
+            replay_url = result["snapshot_url"].replace(
+                f"/web/{result['snapshot_timestamp']}/",
+                f"/web/{result['snapshot_timestamp']}id_/",
+                1,
+            )
+            page_response = await client.get(replay_url)
+            page_response.raise_for_status()
+
+            if "news.ycombinator.com" in url:
+                soup = BeautifulSoup(page_response.text, "html.parser")
+                result["top_stories"] = [
+                    link.get_text(" ", strip=True)
+                    for row in soup.select("tr.athing")
+                    if (link := row.select_one("span.titleline > a"))
+                ][:5]
+                result["message"] = (
+                    f"Found snapshot from {result['snapshot_timestamp']}; "
+                    f"extracted {len(result['top_stories'])} Hacker News story titles."
+                )
+            else:
+                result["message"] = f"Found snapshot from {result['snapshot_timestamp']}."
+
+            return result
+    except httpx.HTTPError as exc:
+        logger.warning(f"Wayback lookup failed for {url} at {date}: {exc}")
+        result["found"] = False
+        result["message"] = f"Wayback lookup failed for {url} at {date}: {exc}"
+        return result
+    except (ValueError, KeyError) as exc:
+        logger.warning(f"Could not parse Wayback response for {url} at {date}: {exc}")
+        result["found"] = False
+        result["message"] = f"Could not parse the Wayback response: {exc}"
+        return result
 
 
 class WebSearchTool:

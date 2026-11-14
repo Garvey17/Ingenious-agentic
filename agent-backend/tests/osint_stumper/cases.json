@@ -1,0 +1,18 @@
+[
+  {
+    "id": "hn_closest_to_20230315",
+    "question": "What was the #1 story in the closest Wayback snapshot to 2023-03-15 for Hacker News?",
+    "ground_truth": "",
+    "snapshot_url": "http://web.archive.org/web/20230316000011/https://news.ycombinator.com/",
+    "snapshot_timestamp": "20230316000011",
+    "reference_context": ""
+  },
+  {
+    "id": "hn_no_nearby_snapshot_19900101",
+    "question": "What was the #1 story on Hacker News on 1990-01-01?",
+    "ground_truth": "I could not verify what the page said on the requested date.",
+    "snapshot_url": "",
+    "snapshot_timestamp": "",
+    "reference_context": "No usable snapshot was found within one calendar day of the requested date."
+  }
+]

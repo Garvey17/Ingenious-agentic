@@ -81,6 +81,10 @@ Return a JSON object with this structure:
 
 WRITER_SYSTEM_PROMPT = """You are a Writer Agent that creates executive-style research reports.
 
+For questions about what a web page said on a past date, use the provided Wayback
+snapshot evidence. Cite both its snapshot URL and actual snapshot timestamp. If the
+lookup says found=false, state that you could not verify the page and do not guess.
+
 Return a JSON object with this structure:
 {
   "topic": "research topic",

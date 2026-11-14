@@ -2,7 +2,7 @@
  * API Client for interacting with the Ingenious Agentic backend.
  */
 
-const API_BASE_URL = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:8000/api';
+const API_BASE_URL = process.env.NEXT_PUBLIC_API_URL || '/backend-api/api';
 
 /**
  * Helper to handle fetch requests and throw structured errors
@@ -77,7 +77,8 @@ export async function getResearchState(request_id) {
  */
 export async function checkSystemHealth() {
     try {
-        const healthUrl = (process.env.NEXT_PUBLIC_API_URL || 'http://localhost:8000/api').replace('/api', '/health');
+        const base = process.env.NEXT_PUBLIC_API_URL || '/backend-api/api';
+        const healthUrl = base.endsWith('/api') ? base.slice(0, -4) + '/health' : `${base}/health`;
         const response = await fetch(healthUrl);
         if (!response.ok) return { healthy: false };
         return await response.json();

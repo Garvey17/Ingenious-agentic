@@ -25,6 +25,7 @@ class ResearchState(TypedDict, total=False):
     plan: list[str]
     search_queries: list[str]
     sources: list[dict[str, Any]]
+    wayback_result: dict[str, Any]
     insights: dict[str, Any]
     report: dict[str, Any]
     review: dict[str, Any]

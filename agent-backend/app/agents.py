@@ -4,6 +4,7 @@ Each run_X function is one node in the LangGraph workflow.
 """
 
 import json
+import re
 
 from app.config import get_logger, settings
 from app.graph import ResearchState
@@ -14,9 +15,43 @@ from app.prompts import (
     WRITER_SYSTEM_PROMPT,
     CRITIC_SYSTEM_PROMPT,
 )
-from app.tools import WebSearchTool
+from app.tools import WebSearchTool, wayback_lookup
 
 logger = get_logger(__name__)
+
+
+def _historical_page_request(goal: str) -> tuple[str, str] | None:
+    """Returns the page URL and requested date for historical page questions."""
+    date_match = re.search(r"\b(\d{4})-(\d{2})-(\d{2})\b", goal)
+    if not date_match:
+        return None
+
+    lower_goal = goal.lower()
+    url_match = re.search(r"https?://[^\s<>]+", goal, re.IGNORECASE)
+    domain_match = re.search(
+        r"(?<![@\w-])(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z]{2,}(?:/[^\s]*)?",
+        goal,
+        re.IGNORECASE,
+    )
+    page_context = any(
+        phrase in lower_goal
+        for phrase in ("hacker news", "web page", "webpage", "website", "homepage", "web site")
+    ) or bool(url_match or domain_match)
+    if not page_context:
+        return None
+
+    if "hacker news" in lower_goal:
+        url = "https://news.ycombinator.com/"
+    elif url_match:
+        url = url_match.group(0).rstrip(".,?!;:)")
+    elif domain_match:
+        url = domain_match.group(0).rstrip(".,?!;:)")
+        if not url.startswith(("http://", "https://")):
+            url = f"https://{url}"
+    else:
+        url = ""
+
+    return url, "".join(date_match.groups())
 
 
 async def ask_for_json(system_prompt: str, prompt: str, temperature: float = 0.5) -> dict:
@@ -49,6 +84,11 @@ async def run_planner(state: ResearchState) -> ResearchState:
     past_research = state.get("past_research", [])
 
     logger.info(f"[planner] Planning: {goal}")
+
+    if _historical_page_request(goal):
+        state["plan"] = ["Retrieve the Wayback snapshot for the requested page and date."]
+        state["search_queries"] = []
+        return state
 
     depth_instructions = {
         "quick": "Generate 2-3 focused search queries. Keep the plan concise.",
@@ -96,6 +136,40 @@ async def run_researcher(state: ResearchState) -> ResearchState:
     logger.info(f"[researcher] Running {len(queries)} queries")
 
     try:
+        historical_request = _historical_page_request(state.get("goal", ""))
+        if historical_request:
+            url, date = historical_request
+            if not url:
+                result = {
+                    "found": False,
+                    "snapshot_url": "",
+                    "snapshot_timestamp": "",
+                    "top_stories": [],
+                    "message": "Could not identify the page URL, so the historical page could not be verified.",
+                }
+                logger.info("[wayback_lookup] skipped: no page URL could be identified")
+            else:
+                result = await wayback_lookup(url, date)
+
+            state["wayback_result"] = result
+            if not result["found"]:
+                # Do not let current web search results substitute for missing historical evidence.
+                state["sources"] = []
+                return state
+
+            titles = result.get("top_stories", [])
+            content = (
+                f"Wayback snapshot timestamp: {result['snapshot_timestamp']}\n"
+                + ("Top stories:\n" + "\n".join(f"- {title}" for title in titles) if titles else "")
+            )
+            state["sources"] = [{
+                "title": f"Wayback snapshot ({result['snapshot_timestamp']})",
+                "url": result["snapshot_url"],
+                "content": content,
+                "relevance_score": 1.0,
+            }]
+            return state
+
         search_tool = WebSearchTool()
         all_sources, seen_urls = [], set()
 
@@ -126,6 +200,21 @@ async def run_analyst(state: ResearchState) -> ResearchState:
     goal = state.get("goal", "")
     sources = state.get("sources", [])
     logger.info(f"[analyst] Analysing {len(sources)} sources")
+
+    wayback_result = state.get("wayback_result")
+    if wayback_result:
+        state["insights"] = {
+            "key_facts": [
+                {
+                    "statement": title,
+                    "source_url": wayback_result.get("snapshot_url", ""),
+                    "confidence": 1.0,
+                }
+                for title in wayback_result.get("top_stories", [])
+            ],
+            "insights": [],
+        }
+        return state
 
     sources_text = "\n\n".join(
         f"[Source {i+1}]\nTitle: {s.get('title', '')}\nURL: {s.get('url', '')}\nContent: {s.get('content', '')[:800]}"
@@ -158,8 +247,76 @@ async def run_writer(state: ResearchState) -> ResearchState:
     insights = state.get("insights", {})
     sources = state.get("sources", [])
     review = state.get("review", {})
+    wayback_result = state.get("wayback_result")
 
     logger.info("[writer] Writing report")
+
+    if wayback_result and not wayback_result.get("found"):
+        message = "I could not verify what the page said on the requested date."
+        detail = wayback_result.get("message", "")
+        state["report"] = {
+            "topic": goal,
+            "executive_summary": message,
+            "sections": [{"title": "Verification", "content": f"{message} {detail}".strip()}],
+            "key_findings": [],
+            "recommendations": [],
+            "sources_cited": [],
+            "word_count": len(message.split()),
+        }
+        return state
+
+    if wayback_result:
+        timestamp = wayback_result.get("snapshot_timestamp", "")
+        snapshot_url = wayback_result.get("snapshot_url", "")
+        titles = wayback_result.get("top_stories", [])
+        requested = _historical_page_request(goal)
+        requested_date = requested[1] if requested else ""
+        snapshot_date = timestamp[:8]
+
+        if titles:
+            first_story = titles[0]
+            requested_label = (
+                f"{requested_date[:4]}-{requested_date[4:6]}-{requested_date[6:8]}"
+                if requested_date else "the requested date"
+            )
+            snapshot_label = (
+                f"{snapshot_date[:4]}-{snapshot_date[4:6]}-{snapshot_date[6:8]}"
+                if len(snapshot_date) == 8 else timestamp
+            )
+            if requested_date == snapshot_date:
+                summary = f'The first Hacker News story in the snapshot is "{first_story}".'
+            else:
+                summary = (
+                    f"The closest snapshot for {requested_label} is dated {snapshot_label}. "
+                    f'Its first Hacker News story is "{first_story}", but it does not verify '
+                    f"the page state on {requested_label}."
+                )
+            sections = [
+                {"title": "Stories in the snapshot", "content": "\n".join(titles)},
+                {
+                    "title": "Snapshot source",
+                    "content": f"Snapshot timestamp: {timestamp}\nSnapshot URL: {snapshot_url}",
+                },
+            ]
+            findings = [f"First story in the archived snapshot: {first_story}."]
+        else:
+            summary = "I could not verify the page contents from the available snapshot."
+            sections = [{
+                "title": "Snapshot source",
+                "content": f"Snapshot timestamp: {timestamp}\nSnapshot URL: {snapshot_url}",
+            }]
+            findings = []
+
+        state["report"] = {
+            "topic": goal,
+            "executive_summary": summary,
+            "sections": sections,
+            "key_findings": findings,
+            "recommendations": [],
+            "sources_cited": [snapshot_url] if snapshot_url else [],
+            "word_count": len(summary.split()),
+        }
+        return state
 
     revision_note = ""
     if review:
@@ -181,7 +338,6 @@ async def run_writer(state: ResearchState) -> ResearchState:
         + revision_note
         + "\n\nWrite a comprehensive, well-structured research report."
     )
-
     try:
         report = await ask_for_json(WRITER_SYSTEM_PROMPT, prompt, temperature=0.6)
         report.setdefault("topic", goal)
@@ -212,6 +368,11 @@ async def run_critic(state: ResearchState) -> ResearchState:
     report = state.get("report", {})
 
     logger.info(f"[critic] Review {iteration + 1}/{max_iterations}")
+
+    if state.get("wayback_result"):
+        state["review"] = {"decision": "approve", "reason": "Report uses Wayback snapshot evidence."}
+        state["status"] = "approved"
+        return state
 
     sections_text = "\n\n".join(
         f"### {s.get('title', '')}\n{s.get('content', '')[:500]}"
