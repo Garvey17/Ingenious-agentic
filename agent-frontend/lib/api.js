@@ -46,7 +46,7 @@ async function fetchApi(endpoint, options = {}) {
  * @param {number} maxSources - Max sources to gather (default 10)
  */
 export async function startResearch(topic, depth = 'standard', maxSources = 10) {
-    return fetchApi('/research/', {
+    return fetchApi('/research', {
         method: 'POST',
         body: JSON.stringify({
             topic,

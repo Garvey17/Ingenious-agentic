@@ -67,6 +67,7 @@ async def list_research_sessions():
     return await svc.list_sessions()
 
 
+@app.post("/api/research", response_model=ResearchResponse, status_code=status.HTTP_202_ACCEPTED)
 @app.post("/api/research/", response_model=ResearchResponse, status_code=status.HTTP_202_ACCEPTED)
 async def start_research(request: ResearchRequest, background_tasks: BackgroundTasks):
     """Start a new research workflow. Returns immediately with a request_id to poll."""
